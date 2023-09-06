@@ -14,6 +14,7 @@ using Cognex.AlignmentSDK.Classes.Settings;
 using Cognex.AlignmentSDK.Exceptions;
 using WindowsFormsApp4;
 
+
 namespace SampleApplication
 {
     public partial class MainForm : Form
