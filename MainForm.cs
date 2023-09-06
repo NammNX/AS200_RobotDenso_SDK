@@ -40,8 +40,9 @@ namespace SampleApplication
             InitializeComponent();
             form1Instance = new Form1();
             form1Instance.TopLevel = false;
+            form1Instance.TestStatusUpdated += UpdateTestStatus;
             toolStripStatusLabelStatus.Text = "";
-
+            
             // Disable tabs before the current sensor is set
             tabSysSetup.Enabled = false;
             tabRecipeMgmt.Enabled = false;
@@ -55,6 +56,12 @@ namespace SampleApplication
 
 
             comboBox_NewRecipeMode.SelectedIndex = 0;
+        }
+        private void UpdateTestStatus(string message, Color backgroundColor)
+        {
+            // Cập nhật lbTestStatus với thông điệp và màu nền từ Form1
+            lbStatusFeature.Text = message;
+            lbStatusFeature.BackColor = backgroundColor;
         }
         #endregion    // Constructor
 
@@ -1633,5 +1640,7 @@ namespace SampleApplication
         }
 
         #endregion     //HeResults
+
+       
     }
 }

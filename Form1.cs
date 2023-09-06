@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 //nxn
 namespace WindowsFormsApp4
 {
@@ -26,10 +27,12 @@ namespace WindowsFormsApp4
             RegisterJointButton();
             RegisterSaveButton();
             RegisterXYZButton();
+            
             //RestoreStateFromFile();
             this.FormClosing += Form1_FormClosing;
             cameraController = new CameraController();
             cameraController.TextReceivedData = txtReceivedData;
+            cameraController.TextReceivedData = txtReceiveDataRobot;
             robotController = new RobotController();
             robotController.TextReceivedData = txtReceivedData;
             robotController.TextReceivedData = txtReceiveDataRobot;
@@ -140,6 +143,8 @@ namespace WindowsFormsApp4
         {
             await LoadPos();
         }
+
+       
 
         private async void btnGetCurPos_Click(object sender, EventArgs e) // Lấy current pos của robot
         {

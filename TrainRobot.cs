@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp4;
 using System.Drawing;
+using SampleApplication;
 
 namespace WindowsFormsApp4
 {
     public partial class Form1
     {
-        
+        private MainForm MainForm;   
         private bool isTT = false;
         private bool isTTR = false;
         
@@ -149,7 +149,7 @@ namespace WindowsFormsApp4
 
             if (!isRelease)
             {
-                await robotController.SendCommand("Nha");
+                await robotController.SendCommand("OnNha");
                 isRelease = true;
                 btnReleaseTool.Text = "OFF Release";
                 btnReleaseTool.BackColor = Color.Red;
@@ -163,6 +163,8 @@ namespace WindowsFormsApp4
 
             }
         }
+
+        public event Action<string, Color> TestStatusUpdated;
 
         private async void btnTestRobot_Click(object sender, EventArgs e)
         {
@@ -189,8 +191,13 @@ namespace WindowsFormsApp4
             if (!Camrespon.Contains("XT,1"))
             {
                 lbTestStatus.Text = "Không tìm được Patten";
+                lbTestStatus.BackColor = Color.Red;
+                TestStatusUpdated?.Invoke("Không tìm được Patten", Color.Red);
                 return;
             }
+            TestStatusUpdated?.Invoke("OK", Color.Green);
+            lbTestStatus.Text = "OK";
+            lbTestStatus.BackColor = Color.Green;
             Camrespon = Camrespon.Substring(5).Replace("\r\n", "");
             Camrespon = ChangeDataFromCamToPosRobot(Camrespon); 
             var CommandPosRobot = $"{Camrespon},{fig}";
