@@ -34,7 +34,8 @@ namespace WindowsFormsApp4
 
         private async Task AutoHandEyeStep(string nextPosForCam)
         {
-            while (true)
+            bool shouldExit = false;
+            while (!shouldExit)
             {
                 var commandHandEyeStep = "AC,1,1," + nextPosForCam;
                 await cameraController.SendCommand(commandHandEyeStep);
@@ -43,7 +44,7 @@ namespace WindowsFormsApp4
                 {
                     btnAutoCalib.Enabled = true;
                     MessageBox.Show("Calib Success");
-                    return;
+                    shouldExit = true;
                 }
                 else if (camResponse.Contains("AC,2"))
                 {
@@ -60,7 +61,7 @@ namespace WindowsFormsApp4
                 {
                     MessageBox.Show("Không tìm thấy Feature", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     btnAutoCalib.Enabled = true;
-                    return;
+                    shouldExit = true;
                 }
 
             }

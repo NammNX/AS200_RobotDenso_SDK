@@ -31,16 +31,16 @@ namespace SampleApplication
         IAlignCameraAutoExposureService mExpService1 = null;
         Button activeButton = null;        // to pass to Handler
         Label statusLabel = null;        // to pass to Handler
-        private Form1 form1Instance;
+        private Form1 form1;
 
 
         #region Constructor *********************************************************************
         public MainForm()
         {
             InitializeComponent();
-            form1Instance = new Form1();
-            form1Instance.TopLevel = false;
-            form1Instance.TestStatusUpdated += UpdateTestStatus;
+            form1 = new Form1();
+            form1.TopLevel = false;
+            form1.TestStatusUpdated += UpdateTestStatus;
             toolStripStatusLabelStatus.Text = "";
             
             // Disable tabs before the current sensor is set
@@ -1593,15 +1593,15 @@ namespace SampleApplication
         {
             if (tabControl1.SelectedTab != null && tabControl1.SelectedTab.Text == "Control Robot")
             {
-                tabPage1.Controls.Add(form1Instance);
-                form1Instance.FormBorderStyle = FormBorderStyle.None;
-                form1Instance.Dock = DockStyle.Fill;
-                form1Instance.Show();
+                tabPage1.Controls.Add(form1);
+                form1.FormBorderStyle = FormBorderStyle.None;
+                form1.Dock = DockStyle.Fill;
+                form1.Show();
             }
             else
             {
-                // chuyển sang tab khác,  ẩn hoặc xóa form1Instance
-                tabPage1.Controls.Remove(form1Instance);
+                // chuyển sang tab khác,  ẩn hoặc xóa form1
+                tabPage1.Controls.Remove(form1);
             }
         }
 

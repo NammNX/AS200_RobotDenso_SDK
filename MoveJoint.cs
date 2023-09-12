@@ -17,7 +17,7 @@ namespace WindowsFormsApp4
             UpdateUIComponents();
         }
 
-        private async void HandleJointButton(Button button, string command)
+        private async void HandleJointButton(string command)
         {
             await robotController.SendCommand(command);
         }
@@ -25,7 +25,7 @@ namespace WindowsFormsApp4
         
         private void AssignJointButton(Button button, string command)
         {
-            button.MouseDown += (sender, e) => HandleJointButton(button, command);
+            button.MouseDown += (sender, e) => HandleJointButton(command);
             button.MouseUp += async (sender, e) => await MouseUpJoint();
         }
 

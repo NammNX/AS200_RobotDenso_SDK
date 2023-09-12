@@ -11,7 +11,7 @@ namespace WindowsFormsApp4
 {
     public partial class Form1
     {
-        private MainForm MainForm;   
+           
         private bool isTT = false;
         private bool isTTR = false;
         
@@ -124,14 +124,14 @@ namespace WindowsFormsApp4
 
             if (!isToolOn)
             {
-                await robotController.SendCommand("ON");
+                await robotController.SendCommand("OnNha");
                 isToolOn = true;
                 btnOnOffTool.Text = "OFF Tool";
                 btnOnOffTool.BackColor = Color.Red;
             }
             else
             {
-                await robotController.SendCommand("OFF");
+                await robotController.SendCommand("OffNha");
                 isToolOn = false;
                 btnOnOffTool.Text = "ON Tool";
                 btnOnOffTool.BackColor = Color.Green;

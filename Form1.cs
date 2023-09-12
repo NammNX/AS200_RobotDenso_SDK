@@ -27,6 +27,7 @@ namespace WindowsFormsApp4
             RegisterJointButton();
             RegisterSaveButton();
             RegisterXYZButton();
+            tabTrainRobot.Enabled = false;
             
             //RestoreStateFromFile();
             this.FormClosing += Form1_FormClosing;
@@ -36,6 +37,7 @@ namespace WindowsFormsApp4
             robotController = new RobotController();
             robotController.TextReceivedData = txtReceivedData;
             robotController.TextReceivedData = txtReceiveDataRobot;
+            btnReleaseTool.Enabled = false;
            
 
         }

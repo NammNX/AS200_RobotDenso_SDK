@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Configured", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Unconfigured", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("On Different Network", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Configured", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Unconfigured", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("On Different Network", System.Windows.Forms.HorizontalAlignment.Left);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabSysMgmt = new System.Windows.Forms.TabPage();
             this.txtSpecialInternalDataFolder = new System.Windows.Forms.TextBox();
@@ -303,6 +303,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelVersion = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label55 = new System.Windows.Forms.Label();
             this.alignSystemDisplay = new Cognex.AlignmentSDK.Controls.AlignSystemDisplay();
             this.numUpDown_CheckerYSpacing = new System.Windows.Forms.NumericUpDown();
@@ -336,7 +337,6 @@
             this.btn_Cam1AcqImage = new System.Windows.Forms.Button();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
             this.lbStatusFeature = new System.Windows.Forms.Label();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabSysMgmt.SuspendLayout();
             this.gBox_SelectedCamNetInfo.SuspendLayout();
@@ -677,16 +677,16 @@
             this.list_Cameras.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.list_Cameras.FullRowSelect = true;
             this.list_Cameras.GridLines = true;
-            listViewGroup1.Header = "Configured";
-            listViewGroup1.Name = "Configured";
-            listViewGroup2.Header = "Unconfigured";
-            listViewGroup2.Name = "Unconfigured";
-            listViewGroup3.Header = "On Different Network";
-            listViewGroup3.Name = "On Different Network";
+            listViewGroup4.Header = "Configured";
+            listViewGroup4.Name = "Configured";
+            listViewGroup5.Header = "Unconfigured";
+            listViewGroup5.Name = "Unconfigured";
+            listViewGroup6.Header = "On Different Network";
+            listViewGroup6.Name = "On Different Network";
             this.list_Cameras.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3});
+            listViewGroup4,
+            listViewGroup5,
+            listViewGroup6});
             this.list_Cameras.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.list_Cameras.HideSelection = false;
             this.list_Cameras.LabelWrap = false;
@@ -3594,7 +3594,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 664);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1442, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1511, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -3615,6 +3615,12 @@
             this.toolStripStatusLabelVersion.Size = new System.Drawing.Size(150, 17);
             this.toolStripStatusLabelVersion.Text = "Version :";
             this.toolStripStatusLabelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // label55
             // 
@@ -3961,19 +3967,12 @@
             this.lbStatusFeature.Size = new System.Drawing.Size(22, 13);
             this.lbStatusFeature.TabIndex = 28;
             this.lbStatusFeature.Text = "OK";
-//            this.lbStatusFeature.Click += new System.EventHandler(this.lbStatusFeature_Click);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1442, 686);
+            this.ClientSize = new System.Drawing.Size(1511, 686);
             this.Controls.Add(this.lbStatusFeature);
             this.Controls.Add(this.label55);
             this.Controls.Add(this.groupBox26);
