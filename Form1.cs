@@ -27,7 +27,7 @@ namespace WindowsFormsApp4
             RegisterJointButton();
             RegisterSaveButton();
             RegisterXYZButton();
-            tabTrainRobot.Enabled = false;
+           
             
             //RestoreStateFromFile();
             this.FormClosing += Form1_FormClosing;
@@ -123,6 +123,7 @@ namespace WindowsFormsApp4
             btnAutoCalib.Enabled = true;
             btnTrainPickPlace.Enabled = true;
             btnTrainVisionPoint.Enabled = true;
+            shouldExit = true;
         }
 
       

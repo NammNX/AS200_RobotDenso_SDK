@@ -31,10 +31,10 @@ namespace WindowsFormsApp4
             await robotController.ReceiveData();
             return nextPosForCam;
         }
-
+        bool shouldExit;
         private async Task AutoHandEyeStep(string nextPosForCam)
         {
-            bool shouldExit = false;
+            shouldExit = false;
             while (!shouldExit)
             {
                 var commandHandEyeStep = "AC,1,1," + nextPosForCam;

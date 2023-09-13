@@ -12,13 +12,13 @@ namespace WindowsFormsApp4
     public partial class Form1
     {
 
-        private string[] X = new string[10];
-        private string[] Y = new string[10];
-        private string[] Z = new string[10];
-        private string[] RX = new string[10];
-        private string[] RY = new string[10];
-        private string[] RZ = new string[10];
-        private string[] FIG = new string[10];
+        private string[] X = new string[16];
+        private string[] Y = new string[16];
+        private string[] Z = new string[16];
+        private string[] RX = new string[16];
+        private string[] RY = new string[16];
+        private string[] RZ = new string[16];
+        private string[] FIG = new string[16];
 
 
         public async Task SavePos()
@@ -72,7 +72,7 @@ namespace WindowsFormsApp4
 
         private void RegisterSaveButton()
         {
-            for (int i = 10; i <= 19; i++)
+            for (int i = 10; i <= 25; i++)
             {
                 Button button = Controls.Find($"btnMoveP{i}", true).FirstOrDefault() as Button;
                 if (button != null)
@@ -145,9 +145,9 @@ namespace WindowsFormsApp4
             await robotController.SendCommand("LoadPos");
             var dataReceive = await robotController.ReceiveData();
             string[] positionData = dataReceive.Split(' ');
-            if (positionData.Length != 70)
+            if (positionData.Length != 112)
             { return; }
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 16; i++)
             {
                 int startIndex = i * 7;
 

@@ -169,6 +169,26 @@
             this.btnTestRobot = new System.Windows.Forms.Button();
             this.btnOnOffTool = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.btnMoveP20 = new System.Windows.Forms.Button();
+            this.lbP20 = new System.Windows.Forms.Label();
+            this.btnMoveP21 = new System.Windows.Forms.Button();
+            this.lbP21 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.btnMoveP22 = new System.Windows.Forms.Button();
+            this.lbP22 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.btnMoveP23 = new System.Windows.Forms.Button();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnMoveP24 = new System.Windows.Forms.Button();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.btnMoveP25 = new System.Windows.Forms.Button();
+            this.lbP23 = new System.Windows.Forms.Label();
+            this.lbP24 = new System.Windows.Forms.Label();
+            this.lbP25 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabTrainRobot.SuspendLayout();
@@ -648,6 +668,7 @@
             // 
             // tabTrainRobot
             // 
+            this.tabTrainRobot.Controls.Add(this.btnGetPosFromPendant);
             this.tabTrainRobot.Controls.Add(this.panel5);
             this.tabTrainRobot.Controls.Add(this.panel4);
             this.tabTrainRobot.Controls.Add(this.panel3);
@@ -698,7 +719,13 @@
             "P16",
             "P17",
             "P18",
-            "P19"});
+            "P19",
+            "P20",
+            "P21",
+            "P22",
+            "P23",
+            "P24",
+            "P25"});
             this.cbPos.Location = new System.Drawing.Point(185, 62);
             this.cbPos.Name = "cbPos";
             this.cbPos.Size = new System.Drawing.Size(51, 21);
@@ -1216,7 +1243,26 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnGetPosFromPendant);
+            this.panel1.Controls.Add(this.lbP25);
+            this.panel1.Controls.Add(this.lbP22);
+            this.panel1.Controls.Add(this.lbP24);
+            this.panel1.Controls.Add(this.lbP21);
+            this.panel1.Controls.Add(this.lbP23);
+            this.panel1.Controls.Add(this.lbP20);
+            this.panel1.Controls.Add(this.btnMoveP25);
+            this.panel1.Controls.Add(this.textBox18);
+            this.panel1.Controls.Add(this.btnMoveP22);
+            this.panel1.Controls.Add(this.btnMoveP24);
+            this.panel1.Controls.Add(this.textBox14);
+            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.btnMoveP21);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.textBox16);
+            this.panel1.Controls.Add(this.btnMoveP23);
+            this.panel1.Controls.Add(this.textBox13);
+            this.panel1.Controls.Add(this.textBox15);
+            this.panel1.Controls.Add(this.btnMoveP20);
+            this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.textBox10);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox9);
@@ -1249,13 +1295,13 @@
             this.panel1.Controls.Add(this.btnMoveP10);
             this.panel1.Location = new System.Drawing.Point(505, 107);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 357);
+            this.panel1.Size = new System.Drawing.Size(387, 588);
             this.panel1.TabIndex = 31;
             // 
             // btnGetPosFromPendant
             // 
             this.btnGetPosFromPendant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnGetPosFromPendant.Location = new System.Drawing.Point(89, 302);
+            this.btnGetPosFromPendant.Location = new System.Drawing.Point(419, 338);
             this.btnGetPosFromPendant.Name = "btnGetPosFromPendant";
             this.btnGetPosFromPendant.Size = new System.Drawing.Size(82, 50);
             this.btnGetPosFromPendant.TabIndex = 30;
@@ -1606,6 +1652,174 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(8, 293);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(75, 20);
+            this.textBox11.TabIndex = 24;
+            // 
+            // btnMoveP20
+            // 
+            this.btnMoveP20.Location = new System.Drawing.Point(90, 291);
+            this.btnMoveP20.Name = "btnMoveP20";
+            this.btnMoveP20.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP20.TabIndex = 25;
+            this.btnMoveP20.Text = "Move P20";
+            this.btnMoveP20.UseVisualStyleBackColor = true;
+            // 
+            // lbP20
+            // 
+            this.lbP20.AutoSize = true;
+            this.lbP20.Location = new System.Drawing.Point(169, 296);
+            this.lbP20.Name = "lbP20";
+            this.lbP20.Size = new System.Drawing.Size(26, 13);
+            this.lbP20.TabIndex = 26;
+            this.lbP20.Text = "P20";
+            // 
+            // btnMoveP21
+            // 
+            this.btnMoveP21.Location = new System.Drawing.Point(89, 320);
+            this.btnMoveP21.Name = "btnMoveP21";
+            this.btnMoveP21.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP21.TabIndex = 25;
+            this.btnMoveP21.Text = "Move P21";
+            this.btnMoveP21.UseVisualStyleBackColor = true;
+            // 
+            // lbP21
+            // 
+            this.lbP21.AutoSize = true;
+            this.lbP21.Location = new System.Drawing.Point(168, 325);
+            this.lbP21.Name = "lbP21";
+            this.lbP21.Size = new System.Drawing.Size(26, 13);
+            this.lbP21.TabIndex = 26;
+            this.lbP21.Text = "P21";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(8, 322);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(75, 20);
+            this.textBox13.TabIndex = 24;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(90, 320);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "button1";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(7, 351);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(75, 20);
+            this.textBox14.TabIndex = 24;
+            // 
+            // btnMoveP22
+            // 
+            this.btnMoveP22.Location = new System.Drawing.Point(89, 349);
+            this.btnMoveP22.Name = "btnMoveP22";
+            this.btnMoveP22.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP22.TabIndex = 25;
+            this.btnMoveP22.Text = "Move P22";
+            this.btnMoveP22.UseVisualStyleBackColor = true;
+            // 
+            // lbP22
+            // 
+            this.lbP22.AutoSize = true;
+            this.lbP22.Location = new System.Drawing.Point(168, 354);
+            this.lbP22.Name = "lbP22";
+            this.lbP22.Size = new System.Drawing.Size(26, 13);
+            this.lbP22.TabIndex = 26;
+            this.lbP22.Text = "P22";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(8, 380);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(75, 20);
+            this.textBox15.TabIndex = 24;
+            // 
+            // btnMoveP23
+            // 
+            this.btnMoveP23.Location = new System.Drawing.Point(90, 378);
+            this.btnMoveP23.Name = "btnMoveP23";
+            this.btnMoveP23.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP23.TabIndex = 25;
+            this.btnMoveP23.Text = "Move P23";
+            this.btnMoveP23.UseVisualStyleBackColor = true;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(8, 409);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(75, 20);
+            this.textBox16.TabIndex = 24;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(90, 407);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "button1";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnMoveP24
+            // 
+            this.btnMoveP24.Location = new System.Drawing.Point(89, 407);
+            this.btnMoveP24.Name = "btnMoveP24";
+            this.btnMoveP24.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP24.TabIndex = 25;
+            this.btnMoveP24.Text = "Move P24";
+            this.btnMoveP24.UseVisualStyleBackColor = true;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(7, 438);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(75, 20);
+            this.textBox18.TabIndex = 24;
+            // 
+            // btnMoveP25
+            // 
+            this.btnMoveP25.Location = new System.Drawing.Point(89, 436);
+            this.btnMoveP25.Name = "btnMoveP25";
+            this.btnMoveP25.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP25.TabIndex = 25;
+            this.btnMoveP25.Text = "Move P25";
+            this.btnMoveP25.UseVisualStyleBackColor = true;
+            // 
+            // lbP23
+            // 
+            this.lbP23.AutoSize = true;
+            this.lbP23.Location = new System.Drawing.Point(169, 383);
+            this.lbP23.Name = "lbP23";
+            this.lbP23.Size = new System.Drawing.Size(26, 13);
+            this.lbP23.TabIndex = 26;
+            this.lbP23.Text = "P23";
+            // 
+            // lbP24
+            // 
+            this.lbP24.AutoSize = true;
+            this.lbP24.Location = new System.Drawing.Point(168, 412);
+            this.lbP24.Name = "lbP24";
+            this.lbP24.Size = new System.Drawing.Size(26, 13);
+            this.lbP24.TabIndex = 26;
+            this.lbP24.Text = "P24";
+            // 
+            // lbP25
+            // 
+            this.lbP25.AutoSize = true;
+            this.lbP25.Location = new System.Drawing.Point(168, 441);
+            this.lbP25.Name = "lbP25";
+            this.lbP25.Size = new System.Drawing.Size(26, 13);
+            this.lbP25.TabIndex = 26;
+            this.lbP25.Text = "P25";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1776,6 +1990,26 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lbP25;
+        private System.Windows.Forms.Label lbP22;
+        private System.Windows.Forms.Label lbP24;
+        private System.Windows.Forms.Label lbP21;
+        private System.Windows.Forms.Label lbP23;
+        private System.Windows.Forms.Label lbP20;
+        private System.Windows.Forms.Button btnMoveP25;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Button btnMoveP22;
+        private System.Windows.Forms.Button btnMoveP24;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnMoveP21;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Button btnMoveP23;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Button btnMoveP20;
+        private System.Windows.Forms.TextBox textBox11;
     }
 }
 
