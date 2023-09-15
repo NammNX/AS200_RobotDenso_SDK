@@ -19,7 +19,14 @@ namespace WindowsFormsApp4
     {
         private CameraController cameraController;
         private RobotController robotController;
-        string x, y, z, rx, ry, rz, fig;
+        public string x { get; set; }
+        public string y { get; set; }
+        public string z { get; set; }
+        public string rx { get; set; }
+        public string ry { get; set; }
+        public string rz { get; set; }
+        public string fig { get; set; }
+        
 
         public Form1()
         {
@@ -29,7 +36,7 @@ namespace WindowsFormsApp4
             RegisterXYZButton();
            
             
-            //RestoreStateFromFile();
+            
             this.FormClosing += Form1_FormClosing;
             cameraController = new CameraController();
             cameraController.TextReceivedData = txtReceivedData;
@@ -49,13 +56,13 @@ namespace WindowsFormsApp4
             cameraController.DisconnectCamera();
             //SaveStateToFile();
         }
-
-        private bool IsconnectCam = false;
+        #region Connect Cam & Robot
+        private bool IsConnectCam = false;
         private bool IsConnectRobot = false;
-
+        
         private void btnConnectCamera_Click(object sender, EventArgs e)
         {
-            if (!IsconnectCam)
+            if (!IsConnectCam)
             {
                 var ipAddress = txtCamIp.Text;
                 var port = int.Parse(txtCamPort.Text);
@@ -64,7 +71,7 @@ namespace WindowsFormsApp4
                 {
                     btnConnectCamera.Text = "Disconnect";
                     btnConnectCamera.BackColor = Color.Red;
-                    IsconnectCam = true;
+                    IsConnectCam = true;
                 }
                 else
                 {
@@ -74,7 +81,7 @@ namespace WindowsFormsApp4
             else
             {
                 cameraController.DisconnectCamera();
-                IsconnectCam = false;
+                IsConnectCam = false;
                 btnConnectCamera.Text = "Connect";
                 btnConnectCamera.BackColor = Color.Green;
             }
@@ -107,6 +114,7 @@ namespace WindowsFormsApp4
                 btnRobotConnect.BackColor = Color.Green;
             }
         }
+        #endregion
 
         private async void btnSend_Click(object sender, EventArgs e)
         {
@@ -115,6 +123,12 @@ namespace WindowsFormsApp4
             await cameraController.SendCommand(command);
             await cameraController.ReceiveData();
 
+        }
+        private async void btnSendRobot_Click(object sender, EventArgs e)
+        {
+            var command = txtSendRobot.Text.Trim();
+            await robotController.SendCommand(command);
+            await robotController.ReceiveData();
         }
         private void btnClearData_Click(object sender, EventArgs e)
         {
@@ -126,28 +140,12 @@ namespace WindowsFormsApp4
             shouldExit = true;
         }
 
-      
-
-        private async void btnSendRobot_Click(object sender, EventArgs e)
-        {
-            var command = txtSendRobot.Text.Trim();
-            await robotController.SendCommand(command);
-            await robotController.ReceiveData();
-        }
-
         private void btnCleanDataRobot_Click(object sender, EventArgs e)
         {
             txtReceiveDataRobot.Clear();
             btnTrainPickPlace.Enabled = true;
             btnTrainVisionPoint.Enabled = true;
         }
-
-        private async void btnGetPosFromPendant_Click(object sender, EventArgs e)
-        {
-            await LoadPos();
-        }
-
-       
 
         private async void btnGetCurPos_Click(object sender, EventArgs e) // Lấy current pos của robot
         {

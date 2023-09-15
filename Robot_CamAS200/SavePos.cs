@@ -162,6 +162,10 @@ namespace WindowsFormsApp4
             UpdateLabelText();
 
         }
+        private async void btnGetPosFromPendant_Click(object sender, EventArgs e)
+        {
+            await LoadPos();
+        }
     }
 
 }

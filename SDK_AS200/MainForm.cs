@@ -57,12 +57,7 @@ namespace SampleApplication
 
             comboBox_NewRecipeMode.SelectedIndex = 0;
         }
-        private void UpdateTestStatus(string message, Color backgroundColor)
-        {
-            // Cập nhật lbTestStatus với thông điệp và màu nền từ Form1
-            lbStatusFeature.Text = message;
-            lbStatusFeature.BackColor = backgroundColor;
-        }
+        
         #endregion    // Constructor
 
         #region Handler ************************************************************************
@@ -1571,40 +1566,6 @@ namespace SampleApplication
         }
         #endregion    // Feature Setup
 
-
-
-        private void chkUseRecipeID_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkUseRecipeID.Checked == true)
-            {
-                numRecipeID.Value = (Decimal)mCurrentSystem.FreeRecipeID;
-            }
-        }
-
-        private void numRecipeID_ValueChanged(object sender, EventArgs e)
-        {
-            if (mCurrentSystem.IsUsedRecipeID((int)numRecipeID.Value) == true)
-                numRecipeID.BackColor = Color.Red;
-            else
-                numRecipeID.BackColor = Color.White;
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)  // nhúng form1 vào tab Control Robot
-        {
-            if (tabControl1.SelectedTab != null && tabControl1.SelectedTab.Text == "Control Robot")
-            {
-                tabPage1.Controls.Add(form1);
-                form1.FormBorderStyle = FormBorderStyle.None;
-                form1.Dock = DockStyle.Fill;
-                form1.Show();
-            }
-            else
-            {
-                // chuyển sang tab khác,  ẩn hoặc xóa form1
-                tabPage1.Controls.Remove(form1);
-            }
-        }
-
         #region HeResults *********************************************************************************************
         private void btnGetHeResults_Click(object sender, EventArgs e)
         {
@@ -1640,6 +1601,48 @@ namespace SampleApplication
         }
 
         #endregion     //HeResults
+
+
+
+
+        private void chkUseRecipeID_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkUseRecipeID.Checked == true)
+            {
+                numRecipeID.Value = (Decimal)mCurrentSystem.FreeRecipeID;
+            }
+        }
+
+        private void numRecipeID_ValueChanged(object sender, EventArgs e)
+        {
+            if (mCurrentSystem.IsUsedRecipeID((int)numRecipeID.Value) == true)
+                numRecipeID.BackColor = Color.Red;
+            else
+                numRecipeID.BackColor = Color.White;
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)  // nhúng form1 vào tab Control Robot
+        {
+            if (tabControl1.SelectedTab != null && tabControl1.SelectedTab.Text == "Control Robot")
+            {
+                tabPage1.Controls.Add(form1);
+                form1.FormBorderStyle = FormBorderStyle.None;
+                form1.Dock = DockStyle.Fill;
+                form1.Show();
+            }
+            else
+            {
+                // chuyển sang tab khác,  ẩn hoặc xóa form1
+                tabPage1.Controls.Remove(form1);
+            }
+        }
+        private void UpdateTestStatus(string message, Color backgroundColor)
+        {
+            // Cập nhật lbTestStatus với thông điệp và màu nền từ Form1
+            lbStatusFeature.Text = message;
+            lbStatusFeature.BackColor = backgroundColor;
+        }
+
 
        
     }

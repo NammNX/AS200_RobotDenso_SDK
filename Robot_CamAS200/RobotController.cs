@@ -42,7 +42,7 @@ namespace WindowsFormsApp4
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không thể kết nối đến robot. Lỗi: " + ex.Message);
+                MessageBox.Show("Can n't connect Robot . Error: " + ex.Message);
 
             }
         }
@@ -60,7 +60,7 @@ namespace WindowsFormsApp4
         {
             if (!IsConnected)
             {
-                MessageBox.Show("Robot chưa được kết nối!");
+                MessageBox.Show("Robot not connected!");
                 return;
             }
             try
@@ -76,7 +76,7 @@ namespace WindowsFormsApp4
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không thể gửi lệnh đến robot. Lỗi: " + ex.Message);
+                MessageBox.Show("Can n't send command to robot. Error: " + ex.Message);
             }
 
         }
@@ -106,12 +106,12 @@ namespace WindowsFormsApp4
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể nhận dữ liệu từ ROBOT. Lỗi: " + ex.Message);
+                    MessageBox.Show("Can n't received data Robot. Error: " + ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("Robot chưa được kết nối!");
+                MessageBox.Show("Robot not connected!");
 
             }
 
@@ -122,7 +122,7 @@ namespace WindowsFormsApp4
         {
             if (!IsConnected)
             { 
-                MessageBox.Show("Kết nối robot !");
+                MessageBox.Show("Connect robot !");
                 return;
             }    
                 try
@@ -145,7 +145,7 @@ namespace WindowsFormsApp4
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể nhận data từ ROBOT. Lỗi: " + ex.Message);
+                    MessageBox.Show("Can n't received data Robot. Error: " + ex.Message);
                 }
            
         }
@@ -157,7 +157,7 @@ namespace WindowsFormsApp4
             var PosRobot = $"{x},{y},{z},{rx},{ry},{rz},{fig}";
             if (!IsConnected)
             {
-                MessageBox.Show("Kết nối robot !");
+                MessageBox.Show("Connect Robot !");
                 return; 
             }
                 await SendCommand("ROBOTMOVE");

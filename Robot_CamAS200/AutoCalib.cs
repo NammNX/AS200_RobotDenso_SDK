@@ -13,7 +13,7 @@ namespace WindowsFormsApp4
         
         private async Task<string> AutoHandEyeBegin()
         {
-            var commandHandEyeBegin = $"ACB,1,1,{x},{y},{z},{rz},{ry},{rx}"; // Lệnh Start HE
+            var commandHandEyeBegin = $"ACB,1,1,{x},{y},{z},{rz},{ry},{rx}"; //  Start HE
             await robotController.SendCommand("HE"); // gửi chữ HE để robot nhảy vào phần HE trên WC3
             await cameraController.SendCommand(commandHandEyeBegin);
             var receivedDataCam = await cameraController.ReceiveData();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp4
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy Feature", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Find Feature Fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     btnAutoCalib.Enabled = true;
                     shouldExit = true;
                 }
@@ -71,7 +71,7 @@ namespace WindowsFormsApp4
         {
             if (!cameraController.IsConnected || !robotController.IsConnected)
             {
-                MessageBox.Show("Kết nối Cam và Robot trước khi Calib");
+                MessageBox.Show("Not Connected Cam/Robot");
                 return;
             }
             btnAutoCalib.Enabled = false;
@@ -81,7 +81,7 @@ namespace WindowsFormsApp4
             var nextPosForCam = await AutoHandEyeBegin();
             if (!isFeature)
             {
-                MessageBox.Show("Không tìm thấy Feature", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Find Feature Fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnAutoCalib.Enabled = true;
                 return;
             }

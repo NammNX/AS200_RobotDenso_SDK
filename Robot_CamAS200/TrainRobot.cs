@@ -52,12 +52,12 @@ namespace WindowsFormsApp4
         {
             if (!cameraController.IsConnected)
             {
-                MessageBox.Show("Camera chưa kết nối");
+                MessageBox.Show("Camera not connected");
                 return;
             }
             if (cbFeature.SelectedIndex == -1)
             {
-                MessageBox.Show("Chọn Feature trước khi Train", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select features before training", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             btnTrainVisionPoint.Enabled = false;
@@ -70,7 +70,7 @@ namespace WindowsFormsApp4
             }
             else
             {
-                MessageBox.Show("Train Fail", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Train Fail", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             btnTrainVisionPoint.Enabled = true;
         }
@@ -80,13 +80,13 @@ namespace WindowsFormsApp4
 
             if (!cameraController.IsConnected)
             {
-                MessageBox.Show("Camera chưa kết nối");
+                MessageBox.Show("Camera not connected");
                 return;
             }
 
             if (cbFeature.SelectedIndex == -1)
             {
-                MessageBox.Show("Chọn Feature trước khi Train", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select features before training", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -143,7 +143,7 @@ namespace WindowsFormsApp4
         {
             if (!robotController.IsConnected)
             {
-                MessageBox.Show("Robot chưa kết nối");
+                MessageBox.Show("Robot not connected");
                 return;
             }
 
@@ -170,19 +170,19 @@ namespace WindowsFormsApp4
         {
             if (!cameraController.IsConnected)
             {
-                MessageBox.Show("Camera chưa kết nối");
+                MessageBox.Show("Camera not connected");
                 return;
             }
             if (cbFeature.SelectedIndex == -1)
             {
-                MessageBox.Show("Chọn Feature trước khi Test", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Select features before Test", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if(!isTT || !isTTR)
-            {
-                MessageBox.Show("Chưa Train Robot");
-                return;
-            }    
+            //if(!isTT || !isTTR)
+            //{
+            //    MessageBox.Show("Chưa Train Robot");
+            //    return;
+            //}    
             var feature = cbFeature.Text;
             var command = $"XT,{feature},1,{x},{y},{z},{rz},{ry},{rx}";
             await cameraController.SendCommand(command);
@@ -190,9 +190,9 @@ namespace WindowsFormsApp4
            
             if (!Camrespon.Contains("XT,1"))
             {
-                lbTestStatus.Text = "Không tìm được Patten";
+                lbTestStatus.Text = "Find Feature Fail";
                 lbTestStatus.BackColor = Color.Red;
-                TestStatusUpdated?.Invoke("Không tìm được Patten", Color.Red);
+                TestStatusUpdated?.Invoke("Find Feature Fail", Color.Red);
                 return;
             }
             TestStatusUpdated?.Invoke("OK", Color.Green);

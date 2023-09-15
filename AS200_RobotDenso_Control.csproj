@@ -50,44 +50,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoCalib.cs">
+    <Compile Include="Robot_CamAS200\AutoCalib.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalibHE.cs">
+    <Compile Include="Robot_CamAS200\CalibHE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CameraController.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Robot_CamAS200\CameraController.cs" />
+    <Compile Include="Robot_CamAS200\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.designer.cs">
+    <Compile Include="Robot_CamAS200\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="SDK_AS200\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.designer.cs">
+    <Compile Include="SDK_AS200\MainForm.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoveJoint.cs">
+    <Compile Include="Robot_CamAS200\MoveJoint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MoveXYZ.cs">
+    <Compile Include="Robot_CamAS200\MoveXYZ.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RobotController.cs" />
-    <Compile Include="SavePos.cs">
+    <Compile Include="Robot_CamAS200\RobotController.cs" />
+    <Compile Include="Robot_CamAS200\SavePos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrainRobot.cs">
+    <Compile Include="Robot_CamAS200\TrainRobot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Robot_CamAS200\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="SDK_AS200\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

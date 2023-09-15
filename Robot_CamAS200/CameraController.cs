@@ -26,7 +26,7 @@ namespace WindowsFormsApp4
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không thể kết nối đến camera. Lỗi: " + ex.Message);
+                MessageBox.Show("Can n't connect Cam . Error: " + ex.Message);
                 
             }
         }
@@ -46,7 +46,7 @@ namespace WindowsFormsApp4
         {
             if (!IsConnected)
             { 
-                MessageBox.Show("Camera chưa được kết nối!");
+                MessageBox.Show("Camera not connected !");
                 return; 
             }
                 try
@@ -61,7 +61,7 @@ namespace WindowsFormsApp4
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể gửi lệnh đến camera. Lỗi: " + ex.Message);
+                    MessageBox.Show("Can n't send command to Cam. Error: " + ex.Message);
                 }
            
 
@@ -93,12 +93,12 @@ namespace WindowsFormsApp4
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể nhận dữ liệu từ camera. Lỗi: " + ex.Message);
+                    MessageBox.Show("Can n't received data Cam. Error:  " + ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("Camera chưa được kết nối!");
+                MessageBox.Show("Camera not connected!");
             }
 
             return string.Empty;
