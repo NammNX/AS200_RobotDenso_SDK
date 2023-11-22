@@ -12,8 +12,7 @@ namespace WindowsFormsApp4
     public partial class Form1
     {
            
-        private bool isTT = false;
-        private bool isTTR = false;
+      
         
         private async Task TrainVisionPoint()
         {
@@ -66,7 +65,7 @@ namespace WindowsFormsApp4
             if (DataReceive.Contains("TT,1"))
             {
                 MessageBox.Show("Train Success", "Thông báo", MessageBoxButtons.OK);
-                isTT = true;
+               
             }
             else
             {
@@ -99,7 +98,7 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("Train Success", "Thông báo", MessageBoxButtons.OK);
                
-                isTTR = true;
+               
             }
             else
             {

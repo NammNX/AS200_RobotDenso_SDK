@@ -50,6 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormManualAlign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManualAlign.designer.cs">
+      <DependentUpon>FormManualAlign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPowerCycleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPowerCycleDialog.designer.cs">
+      <DependentUpon>FormPowerCycleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Robot_CamAS200\AutoCalib.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,17 +75,14 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Robot_CamAS200\CameraController.cs" />
+    <Compile Include="Robot_CamAS200\DisplayCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Robot_CamAS200\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Robot_CamAS200\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SDK_AS200\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SDK_AS200\MainForm.designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Robot_CamAS200\MoveJoint.cs">
       <SubType>Form</SubType>
@@ -84,11 +99,17 @@
     <Compile Include="Robot_CamAS200\TrainRobot.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="FormManualAlign.resx">
+      <DependentUpon>FormManualAlign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPowerCycleDialog.resx">
+      <DependentUpon>FormPowerCycleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Robot_CamAS200\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SDK_AS200\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

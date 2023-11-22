@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.alignSystemDisplay = new Cognex.AlignmentSDK.Controls.AlignSystemDisplay();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDisConnectDisplay = new System.Windows.Forms.Button();
+            this.btnConnectDisplay = new System.Windows.Forms.Button();
+            this.lvCam = new System.Windows.Forms.ListView();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnRobotConnect = new System.Windows.Forms.Button();
@@ -73,6 +82,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabTrainRobot = new System.Windows.Forms.TabPage();
+            this.btnGetPosFromPendant = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.cbPos = new System.Windows.Forms.ComboBox();
             this.btnSavePos = new System.Windows.Forms.Button();
@@ -128,7 +138,26 @@
             this.btnJ1Minus = new System.Windows.Forms.Button();
             this.btnJ1Plus = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGetPosFromPendant = new System.Windows.Forms.Button();
+            this.lbP25 = new System.Windows.Forms.Label();
+            this.lbP22 = new System.Windows.Forms.Label();
+            this.lbP24 = new System.Windows.Forms.Label();
+            this.lbP21 = new System.Windows.Forms.Label();
+            this.lbP23 = new System.Windows.Forms.Label();
+            this.lbP20 = new System.Windows.Forms.Label();
+            this.btnMoveP25 = new System.Windows.Forms.Button();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.btnMoveP22 = new System.Windows.Forms.Button();
+            this.btnMoveP24 = new System.Windows.Forms.Button();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnMoveP21 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.btnMoveP23 = new System.Windows.Forms.Button();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.btnMoveP20 = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -168,27 +197,12 @@
             this.lbTestStatus = new System.Windows.Forms.Label();
             this.btnTestRobot = new System.Windows.Forms.Button();
             this.btnOnOffTool = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.btnMoveP20 = new System.Windows.Forms.Button();
-            this.lbP20 = new System.Windows.Forms.Label();
-            this.btnMoveP21 = new System.Windows.Forms.Button();
-            this.lbP21 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.btnMoveP22 = new System.Windows.Forms.Button();
-            this.lbP22 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.btnMoveP23 = new System.Windows.Forms.Button();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.btnMoveP24 = new System.Windows.Forms.Button();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.btnMoveP25 = new System.Windows.Forms.Button();
-            this.lbP23 = new System.Windows.Forms.Label();
-            this.lbP24 = new System.Windows.Forms.Label();
-            this.lbP25 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lvLogRobot = new System.Windows.Forms.ListView();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabTrainRobot.SuspendLayout();
@@ -197,18 +211,135 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1443, 862);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.alignSystemDisplay, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(717, 858);
+            this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // alignSystemDisplay
+            // 
+            this.alignSystemDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.alignSystemDisplay.Location = new System.Drawing.Point(4, 4);
+            this.alignSystemDisplay.Margin = new System.Windows.Forms.Padding(4);
+            this.alignSystemDisplay.Name = "alignSystemDisplay";
+            this.alignSystemDisplay.Size = new System.Drawing.Size(709, 635);
+            this.alignSystemDisplay.TabIndex = 1;
+            this.alignSystemDisplay.ToolBarLiveVideoEnabled = true;
+            this.alignSystemDisplay.ToolBarLoadImageEnabled = true;
+            this.alignSystemDisplay.ToolBarSaveImageEnabled = true;
+            this.alignSystemDisplay.ToolBarVisibility = true;
+            this.alignSystemDisplay.UseAcceptCancelToolbarButtons = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox2.Controls.Add(this.btnDisConnectDisplay);
+            this.groupBox2.Controls.Add(this.btnConnectDisplay);
+            this.groupBox2.Controls.Add(this.lvCam);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(2, 645);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(713, 211);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "LogCam";
+            // 
+            // btnDisConnectDisplay
+            // 
+            this.btnDisConnectDisplay.BackColor = System.Drawing.Color.Lime;
+            this.btnDisConnectDisplay.Location = new System.Drawing.Point(590, 7);
+            this.btnDisConnectDisplay.Name = "btnDisConnectDisplay";
+            this.btnDisConnectDisplay.Size = new System.Drawing.Size(118, 23);
+            this.btnDisConnectDisplay.TabIndex = 2;
+            this.btnDisConnectDisplay.Text = "DisConnect Display";
+            this.btnDisConnectDisplay.UseVisualStyleBackColor = false;
+            this.btnDisConnectDisplay.Click += new System.EventHandler(this.btnDisConnectDisplay_Click);
+            // 
+            // btnConnectDisplay
+            // 
+            this.btnConnectDisplay.BackColor = System.Drawing.Color.Lime;
+            this.btnConnectDisplay.Location = new System.Drawing.Point(466, 7);
+            this.btnConnectDisplay.Name = "btnConnectDisplay";
+            this.btnConnectDisplay.Size = new System.Drawing.Size(118, 23);
+            this.btnConnectDisplay.TabIndex = 1;
+            this.btnConnectDisplay.Text = "Connect Display";
+            this.btnConnectDisplay.UseVisualStyleBackColor = false;
+            this.btnConnectDisplay.Click += new System.EventHandler(this.btnConnectDisplay_Click);
+            // 
+            // lvCam
+            // 
+            this.lvCam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvCam.HideSelection = false;
+            this.lvCam.Location = new System.Drawing.Point(2, 15);
+            this.lvCam.Margin = new System.Windows.Forms.Padding(2);
+            this.lvCam.Name = "lvCam";
+            this.lvCam.Size = new System.Drawing.Size(709, 194);
+            this.lvCam.TabIndex = 0;
+            this.lvCam.UseCompatibleStateImageBehavior = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tabControl1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(723, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(718, 858);
+            this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabTrainRobot);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(841, 749);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(712, 637);
+            this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -256,7 +387,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(833, 723);
+            this.tabPage1.Size = new System.Drawing.Size(704, 611);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Calib HE";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -271,7 +402,6 @@
             this.btnRobotConnect.TabIndex = 72;
             this.btnRobotConnect.Text = "Connect";
             this.btnRobotConnect.UseVisualStyleBackColor = false;
-            this.btnRobotConnect.Click += new System.EventHandler(this.btnRobotConnect_Click);
             // 
             // btnConnectCamera
             // 
@@ -284,7 +414,6 @@
             this.btnConnectCamera.TabIndex = 71;
             this.btnConnectCamera.Text = "Connect";
             this.btnConnectCamera.UseVisualStyleBackColor = false;
-            this.btnConnectCamera.Click += new System.EventHandler(this.btnConnectCamera_Click);
             // 
             // btnAutoCalib
             // 
@@ -297,7 +426,6 @@
             this.btnAutoCalib.TabIndex = 70;
             this.btnAutoCalib.Text = "Auto Calib";
             this.btnAutoCalib.UseVisualStyleBackColor = false;
-            this.btnAutoCalib.Click += new System.EventHandler(this.btnAutoCalib_Click);
             // 
             // btnGetCurPos
             // 
@@ -309,7 +437,6 @@
             this.btnGetCurPos.TabIndex = 69;
             this.btnGetCurPos.Text = "Get CurPos";
             this.btnGetCurPos.UseVisualStyleBackColor = false;
-            this.btnGetCurPos.Click += new System.EventHandler(this.btnGetCurPos_Click);
             // 
             // lbStatusRobot
             // 
@@ -349,7 +476,6 @@
             this.btnClearData.TabIndex = 65;
             this.btnClearData.Text = "Clear Data";
             this.btnClearData.UseVisualStyleBackColor = false;
-            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // label19
             // 
@@ -392,7 +518,6 @@
             this.btnHE.TabIndex = 53;
             this.btnHE.Text = "Hand-Eye";
             this.btnHE.UseVisualStyleBackColor = false;
-            this.btnHE.Click += new System.EventHandler(this.btnHE_Click);
             // 
             // btnSend
             // 
@@ -404,7 +529,6 @@
             this.btnSend.TabIndex = 52;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label12
             // 
@@ -686,10 +810,20 @@
             this.tabTrainRobot.Location = new System.Drawing.Point(4, 22);
             this.tabTrainRobot.Name = "tabTrainRobot";
             this.tabTrainRobot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTrainRobot.Size = new System.Drawing.Size(833, 723);
+            this.tabTrainRobot.Size = new System.Drawing.Size(704, 611);
             this.tabTrainRobot.TabIndex = 1;
             this.tabTrainRobot.Text = "Train Robot";
             this.tabTrainRobot.UseVisualStyleBackColor = true;
+            // 
+            // btnGetPosFromPendant
+            // 
+            this.btnGetPosFromPendant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnGetPosFromPendant.Location = new System.Drawing.Point(419, 338);
+            this.btnGetPosFromPendant.Name = "btnGetPosFromPendant";
+            this.btnGetPosFromPendant.Size = new System.Drawing.Size(82, 50);
+            this.btnGetPosFromPendant.TabIndex = 30;
+            this.btnGetPosFromPendant.Text = "Get Pos From Pendant";
+            this.btnGetPosFromPendant.UseVisualStyleBackColor = false;
             // 
             // panel5
             // 
@@ -739,7 +873,6 @@
             this.btnSavePos.TabIndex = 18;
             this.btnSavePos.Text = "GetPos to ";
             this.btnSavePos.UseVisualStyleBackColor = true;
-            this.btnSavePos.Click += new System.EventHandler(this.btnSavePos_Click);
             // 
             // cbFeature
             // 
@@ -772,7 +905,6 @@
             this.btnTrainPickPlace.TabIndex = 12;
             this.btnTrainPickPlace.Text = "Train Pick/Place Point";
             this.btnTrainPickPlace.UseVisualStyleBackColor = true;
-            this.btnTrainPickPlace.Click += new System.EventHandler(this.btnTrainPickPlace_Click);
             // 
             // btnTrainVisionPoint
             // 
@@ -782,7 +914,6 @@
             this.btnTrainVisionPoint.TabIndex = 12;
             this.btnTrainVisionPoint.Text = "Train Vision Point";
             this.btnTrainVisionPoint.UseVisualStyleBackColor = true;
-            this.btnTrainVisionPoint.Click += new System.EventHandler(this.btnTrainVisionPoint_Click);
             // 
             // btnGetCurPos2
             // 
@@ -792,7 +923,6 @@
             this.btnGetCurPos2.TabIndex = 4;
             this.btnGetCurPos2.Text = "Get CurPos";
             this.btnGetCurPos2.UseVisualStyleBackColor = true;
-            this.btnGetCurPos2.Click += new System.EventHandler(this.btnGetCurPos2_Click);
             // 
             // panel4
             // 
@@ -825,7 +955,6 @@
             this.btnMoveRobot.TabIndex = 5;
             this.btnMoveRobot.Text = "Move";
             this.btnMoveRobot.UseVisualStyleBackColor = false;
-            this.btnMoveRobot.Click += new System.EventHandler(this.btnMoveRobot_Click);
             // 
             // label28
             // 
@@ -1298,16 +1427,173 @@
             this.panel1.Size = new System.Drawing.Size(387, 588);
             this.panel1.TabIndex = 31;
             // 
-            // btnGetPosFromPendant
+            // lbP25
             // 
-            this.btnGetPosFromPendant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnGetPosFromPendant.Location = new System.Drawing.Point(419, 338);
-            this.btnGetPosFromPendant.Name = "btnGetPosFromPendant";
-            this.btnGetPosFromPendant.Size = new System.Drawing.Size(82, 50);
-            this.btnGetPosFromPendant.TabIndex = 30;
-            this.btnGetPosFromPendant.Text = "Get Pos From Pendant";
-            this.btnGetPosFromPendant.UseVisualStyleBackColor = false;
-            this.btnGetPosFromPendant.Click += new System.EventHandler(this.btnGetPosFromPendant_Click);
+            this.lbP25.AutoSize = true;
+            this.lbP25.Location = new System.Drawing.Point(168, 441);
+            this.lbP25.Name = "lbP25";
+            this.lbP25.Size = new System.Drawing.Size(26, 13);
+            this.lbP25.TabIndex = 26;
+            this.lbP25.Text = "P25";
+            // 
+            // lbP22
+            // 
+            this.lbP22.AutoSize = true;
+            this.lbP22.Location = new System.Drawing.Point(168, 354);
+            this.lbP22.Name = "lbP22";
+            this.lbP22.Size = new System.Drawing.Size(26, 13);
+            this.lbP22.TabIndex = 26;
+            this.lbP22.Text = "P22";
+            // 
+            // lbP24
+            // 
+            this.lbP24.AutoSize = true;
+            this.lbP24.Location = new System.Drawing.Point(168, 412);
+            this.lbP24.Name = "lbP24";
+            this.lbP24.Size = new System.Drawing.Size(26, 13);
+            this.lbP24.TabIndex = 26;
+            this.lbP24.Text = "P24";
+            // 
+            // lbP21
+            // 
+            this.lbP21.AutoSize = true;
+            this.lbP21.Location = new System.Drawing.Point(168, 325);
+            this.lbP21.Name = "lbP21";
+            this.lbP21.Size = new System.Drawing.Size(26, 13);
+            this.lbP21.TabIndex = 26;
+            this.lbP21.Text = "P21";
+            // 
+            // lbP23
+            // 
+            this.lbP23.AutoSize = true;
+            this.lbP23.Location = new System.Drawing.Point(169, 383);
+            this.lbP23.Name = "lbP23";
+            this.lbP23.Size = new System.Drawing.Size(26, 13);
+            this.lbP23.TabIndex = 26;
+            this.lbP23.Text = "P23";
+            // 
+            // lbP20
+            // 
+            this.lbP20.AutoSize = true;
+            this.lbP20.Location = new System.Drawing.Point(169, 296);
+            this.lbP20.Name = "lbP20";
+            this.lbP20.Size = new System.Drawing.Size(26, 13);
+            this.lbP20.TabIndex = 26;
+            this.lbP20.Text = "P20";
+            // 
+            // btnMoveP25
+            // 
+            this.btnMoveP25.Location = new System.Drawing.Point(89, 436);
+            this.btnMoveP25.Name = "btnMoveP25";
+            this.btnMoveP25.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP25.TabIndex = 25;
+            this.btnMoveP25.Text = "Move P25";
+            this.btnMoveP25.UseVisualStyleBackColor = true;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(7, 438);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(75, 20);
+            this.textBox18.TabIndex = 24;
+            // 
+            // btnMoveP22
+            // 
+            this.btnMoveP22.Location = new System.Drawing.Point(89, 349);
+            this.btnMoveP22.Name = "btnMoveP22";
+            this.btnMoveP22.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP22.TabIndex = 25;
+            this.btnMoveP22.Text = "Move P22";
+            this.btnMoveP22.UseVisualStyleBackColor = true;
+            // 
+            // btnMoveP24
+            // 
+            this.btnMoveP24.Location = new System.Drawing.Point(89, 407);
+            this.btnMoveP24.Name = "btnMoveP24";
+            this.btnMoveP24.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP24.TabIndex = 25;
+            this.btnMoveP24.Text = "Move P24";
+            this.btnMoveP24.UseVisualStyleBackColor = true;
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(7, 351);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(75, 20);
+            this.textBox14.TabIndex = 24;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(90, 407);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "button1";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnMoveP21
+            // 
+            this.btnMoveP21.Location = new System.Drawing.Point(89, 320);
+            this.btnMoveP21.Name = "btnMoveP21";
+            this.btnMoveP21.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP21.TabIndex = 25;
+            this.btnMoveP21.Text = "Move P21";
+            this.btnMoveP21.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(90, 320);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "button1";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(8, 409);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(75, 20);
+            this.textBox16.TabIndex = 24;
+            // 
+            // btnMoveP23
+            // 
+            this.btnMoveP23.Location = new System.Drawing.Point(90, 378);
+            this.btnMoveP23.Name = "btnMoveP23";
+            this.btnMoveP23.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP23.TabIndex = 25;
+            this.btnMoveP23.Text = "Move P23";
+            this.btnMoveP23.UseVisualStyleBackColor = true;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(8, 322);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(75, 20);
+            this.textBox13.TabIndex = 24;
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(8, 380);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(75, 20);
+            this.textBox15.TabIndex = 24;
+            // 
+            // btnMoveP20
+            // 
+            this.btnMoveP20.Location = new System.Drawing.Point(90, 291);
+            this.btnMoveP20.Name = "btnMoveP20";
+            this.btnMoveP20.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveP20.TabIndex = 25;
+            this.btnMoveP20.Text = "Move P20";
+            this.btnMoveP20.UseVisualStyleBackColor = true;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(8, 293);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(75, 20);
+            this.textBox11.TabIndex = 24;
             // 
             // textBox10
             // 
@@ -1568,7 +1854,6 @@
             this.btnReleaseTool.TabIndex = 29;
             this.btnReleaseTool.Text = "Release";
             this.btnReleaseTool.UseVisualStyleBackColor = false;
-            this.btnReleaseTool.Click += new System.EventHandler(this.btnReleaseTool_Click);
             // 
             // label14
             // 
@@ -1582,13 +1867,12 @@
             // btnCleanDataRobot
             // 
             this.btnCleanDataRobot.BackColor = System.Drawing.Color.Red;
-            this.btnCleanDataRobot.Location = new System.Drawing.Point(297, 464);
+            this.btnCleanDataRobot.Location = new System.Drawing.Point(296, 483);
             this.btnCleanDataRobot.Name = "btnCleanDataRobot";
             this.btnCleanDataRobot.Size = new System.Drawing.Size(49, 35);
             this.btnCleanDataRobot.TabIndex = 27;
             this.btnCleanDataRobot.Text = "Clear";
             this.btnCleanDataRobot.UseVisualStyleBackColor = false;
-            this.btnCleanDataRobot.Click += new System.EventHandler(this.btnCleanDataRobot_Click);
             // 
             // txtReceiveDataRobot
             // 
@@ -1608,7 +1892,6 @@
             this.btnSendRobot.TabIndex = 25;
             this.btnSendRobot.Text = "Send";
             this.btnSendRobot.UseVisualStyleBackColor = true;
-            this.btnSendRobot.Click += new System.EventHandler(this.btnSendRobot_Click);
             // 
             // txtSendRobot
             // 
@@ -1634,7 +1917,6 @@
             this.btnTestRobot.TabIndex = 21;
             this.btnTestRobot.Text = "Test ";
             this.btnTestRobot.UseVisualStyleBackColor = true;
-            this.btnTestRobot.Click += new System.EventHandler(this.btnTestRobot_Click);
             // 
             // btnOnOffTool
             // 
@@ -1645,190 +1927,45 @@
             this.btnOnOffTool.TabIndex = 16;
             this.btnOnOffTool.Text = "Tool On";
             this.btnOnOffTool.UseVisualStyleBackColor = false;
-            this.btnOnOffTool.Click += new System.EventHandler(this.btnOnOffTool_Click);
             // 
-            // contextMenuStrip1
+            // groupBox1
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.groupBox1.Controls.Add(this.lvLogRobot);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(2, 645);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(714, 211);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "LogRobot";
             // 
-            // textBox11
+            // lvLogRobot
             // 
-            this.textBox11.Location = new System.Drawing.Point(8, 293);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(75, 20);
-            this.textBox11.TabIndex = 24;
-            // 
-            // btnMoveP20
-            // 
-            this.btnMoveP20.Location = new System.Drawing.Point(90, 291);
-            this.btnMoveP20.Name = "btnMoveP20";
-            this.btnMoveP20.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveP20.TabIndex = 25;
-            this.btnMoveP20.Text = "Move P20";
-            this.btnMoveP20.UseVisualStyleBackColor = true;
-            // 
-            // lbP20
-            // 
-            this.lbP20.AutoSize = true;
-            this.lbP20.Location = new System.Drawing.Point(169, 296);
-            this.lbP20.Name = "lbP20";
-            this.lbP20.Size = new System.Drawing.Size(26, 13);
-            this.lbP20.TabIndex = 26;
-            this.lbP20.Text = "P20";
-            // 
-            // btnMoveP21
-            // 
-            this.btnMoveP21.Location = new System.Drawing.Point(89, 320);
-            this.btnMoveP21.Name = "btnMoveP21";
-            this.btnMoveP21.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveP21.TabIndex = 25;
-            this.btnMoveP21.Text = "Move P21";
-            this.btnMoveP21.UseVisualStyleBackColor = true;
-            // 
-            // lbP21
-            // 
-            this.lbP21.AutoSize = true;
-            this.lbP21.Location = new System.Drawing.Point(168, 325);
-            this.lbP21.Name = "lbP21";
-            this.lbP21.Size = new System.Drawing.Size(26, 13);
-            this.lbP21.TabIndex = 26;
-            this.lbP21.Text = "P21";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(8, 322);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(75, 20);
-            this.textBox13.TabIndex = 24;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(90, 320);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(7, 351);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(75, 20);
-            this.textBox14.TabIndex = 24;
-            // 
-            // btnMoveP22
-            // 
-            this.btnMoveP22.Location = new System.Drawing.Point(89, 349);
-            this.btnMoveP22.Name = "btnMoveP22";
-            this.btnMoveP22.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveP22.TabIndex = 25;
-            this.btnMoveP22.Text = "Move P22";
-            this.btnMoveP22.UseVisualStyleBackColor = true;
-            // 
-            // lbP22
-            // 
-            this.lbP22.AutoSize = true;
-            this.lbP22.Location = new System.Drawing.Point(168, 354);
-            this.lbP22.Name = "lbP22";
-            this.lbP22.Size = new System.Drawing.Size(26, 13);
-            this.lbP22.TabIndex = 26;
-            this.lbP22.Text = "P22";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(8, 380);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(75, 20);
-            this.textBox15.TabIndex = 24;
-            // 
-            // btnMoveP23
-            // 
-            this.btnMoveP23.Location = new System.Drawing.Point(90, 378);
-            this.btnMoveP23.Name = "btnMoveP23";
-            this.btnMoveP23.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveP23.TabIndex = 25;
-            this.btnMoveP23.Text = "Move P23";
-            this.btnMoveP23.UseVisualStyleBackColor = true;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(8, 409);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(75, 20);
-            this.textBox16.TabIndex = 24;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(90, 407);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "button1";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // btnMoveP24
-            // 
-            this.btnMoveP24.Location = new System.Drawing.Point(89, 407);
-            this.btnMoveP24.Name = "btnMoveP24";
-            this.btnMoveP24.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveP24.TabIndex = 25;
-            this.btnMoveP24.Text = "Move P24";
-            this.btnMoveP24.UseVisualStyleBackColor = true;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(7, 438);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(75, 20);
-            this.textBox18.TabIndex = 24;
-            // 
-            // btnMoveP25
-            // 
-            this.btnMoveP25.Location = new System.Drawing.Point(89, 436);
-            this.btnMoveP25.Name = "btnMoveP25";
-            this.btnMoveP25.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveP25.TabIndex = 25;
-            this.btnMoveP25.Text = "Move P25";
-            this.btnMoveP25.UseVisualStyleBackColor = true;
-            // 
-            // lbP23
-            // 
-            this.lbP23.AutoSize = true;
-            this.lbP23.Location = new System.Drawing.Point(169, 383);
-            this.lbP23.Name = "lbP23";
-            this.lbP23.Size = new System.Drawing.Size(26, 13);
-            this.lbP23.TabIndex = 26;
-            this.lbP23.Text = "P23";
-            // 
-            // lbP24
-            // 
-            this.lbP24.AutoSize = true;
-            this.lbP24.Location = new System.Drawing.Point(168, 412);
-            this.lbP24.Name = "lbP24";
-            this.lbP24.Size = new System.Drawing.Size(26, 13);
-            this.lbP24.TabIndex = 26;
-            this.lbP24.Text = "P24";
-            // 
-            // lbP25
-            // 
-            this.lbP25.AutoSize = true;
-            this.lbP25.Location = new System.Drawing.Point(168, 441);
-            this.lbP25.Name = "lbP25";
-            this.lbP25.Size = new System.Drawing.Size(26, 13);
-            this.lbP25.TabIndex = 26;
-            this.lbP25.Text = "P25";
+            this.lvLogRobot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvLogRobot.HideSelection = false;
+            this.lvLogRobot.Location = new System.Drawing.Point(2, 15);
+            this.lvLogRobot.Margin = new System.Windows.Forms.Padding(2);
+            this.lvLogRobot.Name = "lvLogRobot";
+            this.lvLogRobot.Size = new System.Drawing.Size(710, 194);
+            this.lvLogRobot.TabIndex = 0;
+            this.lvLogRobot.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 749);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1443, 862);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Control Robot_AS200";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1844,14 +1981,21 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Cognex.AlignmentSDK.Controls.AlignSystemDisplay alignSystemDisplay;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnRobotConnect;
+        private System.Windows.Forms.Button btnConnectCamera;
         private System.Windows.Forms.Button btnAutoCalib;
         private System.Windows.Forms.Button btnGetCurPos;
         private System.Windows.Forms.Label lbStatusRobot;
@@ -1892,7 +2036,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabTrainRobot;
+        private System.Windows.Forms.Button btnGetPosFromPendant;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox cbPos;
+        private System.Windows.Forms.Button btnSavePos;
+        private System.Windows.Forms.ComboBox cbFeature;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button btnTrainPickPlace;
+        private System.Windows.Forms.Button btnTrainVisionPoint;
         private System.Windows.Forms.Button btnGetCurPos2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnMoveRobot;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label25;
@@ -1907,6 +2061,7 @@
         private System.Windows.Forms.TextBox txtRy2;
         private System.Windows.Forms.TextBox txtY;
         private System.Windows.Forms.TextBox txtX;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnRzdown;
         private System.Windows.Forms.Button btnYdown;
@@ -1916,7 +2071,7 @@
         private System.Windows.Forms.Button btnZup;
         private System.Windows.Forms.Button btnXdown;
         private System.Windows.Forms.Button btnXup;
-        private System.Windows.Forms.Button btnMoveRobot;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label32;
@@ -1936,60 +2091,7 @@
         private System.Windows.Forms.Button btnJ3Plus;
         private System.Windows.Forms.Button btnJ1Minus;
         private System.Windows.Forms.Button btnJ1Plus;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Button btnTrainPickPlace;
-        private System.Windows.Forms.Button btnTrainVisionPoint;
-        private System.Windows.Forms.ComboBox cbFeature;
-        private System.Windows.Forms.Button btnOnOffTool;
-        private System.Windows.Forms.Button btnConnectCamera;
-        private System.Windows.Forms.Button btnRobotConnect;
-        private System.Windows.Forms.Button btnMoveP10;
-        private System.Windows.Forms.ComboBox cbPos;
-        private System.Windows.Forms.Button btnSavePos;
-        private System.Windows.Forms.Button btnMoveP14;
-        private System.Windows.Forms.Button btnMoveP13;
-        private System.Windows.Forms.Button btnMoveP12;
-        private System.Windows.Forms.Button btnMoveP11;
-        private System.Windows.Forms.Label lbP14;
-        private System.Windows.Forms.Label lbP13;
-        private System.Windows.Forms.Label lbP12;
-        private System.Windows.Forms.Label lbP11;
-        private System.Windows.Forms.Label lbP10;
-        private System.Windows.Forms.Button btnTestRobot;
-        private System.Windows.Forms.Label lbTestStatus;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtSendRobot;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button btnSendRobot;
-        private System.Windows.Forms.TextBox txtReceiveDataRobot;
-        private System.Windows.Forms.Button btnCleanDataRobot;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label lbP19;
-        private System.Windows.Forms.Label lbP18;
-        private System.Windows.Forms.Label lbP17;
-        private System.Windows.Forms.Label lbP16;
-        private System.Windows.Forms.Label lbP15;
-        private System.Windows.Forms.Button btnMoveP19;
-        private System.Windows.Forms.Button btnMoveP18;
-        private System.Windows.Forms.Button btnMoveP17;
-        private System.Windows.Forms.Button btnMoveP16;
-        private System.Windows.Forms.Button btnMoveP15;
-        private System.Windows.Forms.Button btnReleaseTool;
-        private System.Windows.Forms.Button btnGetPosFromPendant;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbP25;
         private System.Windows.Forms.Label lbP22;
         private System.Windows.Forms.Label lbP24;
@@ -2010,6 +2112,51 @@
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Button btnMoveP20;
         private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbP19;
+        private System.Windows.Forms.Label lbP14;
+        private System.Windows.Forms.Label lbP18;
+        private System.Windows.Forms.Label lbP13;
+        private System.Windows.Forms.Label lbP17;
+        private System.Windows.Forms.Label lbP12;
+        private System.Windows.Forms.Label lbP16;
+        private System.Windows.Forms.Label lbP11;
+        private System.Windows.Forms.Label lbP15;
+        private System.Windows.Forms.Label lbP10;
+        private System.Windows.Forms.Button btnMoveP19;
+        private System.Windows.Forms.Button btnMoveP18;
+        private System.Windows.Forms.Button btnMoveP14;
+        private System.Windows.Forms.Button btnMoveP17;
+        private System.Windows.Forms.Button btnMoveP13;
+        private System.Windows.Forms.Button btnMoveP16;
+        private System.Windows.Forms.Button btnMoveP12;
+        private System.Windows.Forms.Button btnMoveP15;
+        private System.Windows.Forms.Button btnMoveP11;
+        private System.Windows.Forms.Button btnMoveP10;
+        private System.Windows.Forms.Button btnReleaseTool;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnCleanDataRobot;
+        private System.Windows.Forms.TextBox txtReceiveDataRobot;
+        private System.Windows.Forms.Button btnSendRobot;
+        private System.Windows.Forms.TextBox txtSendRobot;
+        private System.Windows.Forms.Label lbTestStatus;
+        private System.Windows.Forms.Button btnTestRobot;
+        private System.Windows.Forms.Button btnOnOffTool;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListView lvLogRobot;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListView lvCam;
+        private System.Windows.Forms.Button btnDisConnectDisplay;
+        private System.Windows.Forms.Button btnConnectDisplay;
     }
 }
 

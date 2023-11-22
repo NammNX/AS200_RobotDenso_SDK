@@ -220,7 +220,7 @@ namespace WindowsFormsApp4
             return DataReiceved;
         }
 
-
+       
     }
 
 }
