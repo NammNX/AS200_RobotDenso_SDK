@@ -40,17 +40,22 @@ namespace WindowsFormsApp4
             }
             catch (ArgumentException ex)           //"The provided IP Address could not be resolved."
             {
-                lvCam.Text = "Error : " + ex.Message;
+                ListViewItem item = new ListViewItem("Error: " + ex.Message);
+                lvCam.Items.Add(item);
+                //   MessageBox.Show("Error : " + ex.Message);
+                ((Button)sender).BackColor = Color.Lime;
                 return;
             }
             catch (Cognex.AlignmentSDK.Exceptions.AlreadyConnectedException ex)
             {
                 lvCam.Text = "Error : " + ex.Message;
+                ((Button)sender).BackColor = Color.Lime;
                 return;
             }
             catch (Exception ex)
             {
                 lvCam.Text = "Error : " + ex.Message;
+                ((Button)sender).BackColor = Color.Lime;
                 return;
             }
             initForChangedSystem();
@@ -64,26 +69,30 @@ namespace WindowsFormsApp4
         }
         private void initForChangedSystem()
         {
-            if (mCurrentSystem?.IsConnected ?? true)    //when Selected Current System is notconnected
+            if (mCurrentSystem?.IsConnected ?? false)    //when Selected Current System is connected
+            {
+                // Update Movable Origin Info
+                var sysSetting = mCurrentSystem.GetAlignSystemSettings();
+
+                // Setup for Cameras, Displays, Features ---------------------------------------------
+                //     Recipe is always exists.
+                if (mCurrentSystem != null)
+                {
+                    alignSystemDisplay.SetAlignSystem(mCurrentSystem);
+                }
+
+
+                mCamera1 = mCurrentSystem.Cameras[0];
+                mCamDisp1 = alignSystemDisplay?.GetSubDisplay(mCamera1);
+                // mCamDisp1.FileName = txtFileName.Text;
+
+            }
+            else
             {
                 return;
             }
 
-            // Update Movable Origin Info
-            var sysSetting = mCurrentSystem.GetAlignSystemSettings();
-
-            // Setup for Cameras, Displays, Features ---------------------------------------------
-            //     Recipe is always exists.
-            if (mCurrentSystem != null)
-            {
-                alignSystemDisplay.SetAlignSystem(mCurrentSystem);
-            }
-
-
-            mCamera1 = mCurrentSystem.Cameras[0];
-            mCamDisp1 = alignSystemDisplay?.GetSubDisplay(mCamera1);
-            // mCamDisp1.FileName = txtFileName.Text;
-
+         
 
         }
     }

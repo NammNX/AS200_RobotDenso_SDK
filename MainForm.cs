@@ -137,7 +137,7 @@ namespace SampleApplication
         return;
       }
 
-      show_CurrentSystem_onHMI();
+    //  show_CurrentSystem_onHMI();
       initForChangedSystem();
       ((Button)sender).BackColor = Color.Lime;
 
@@ -241,29 +241,29 @@ namespace SampleApplication
     {
       if (mCurrentSystem?.IsConnected ?? false)    //when Selected Current System is connected
       {
-        tabSysSetup.Enabled = true;
-        tabRecipeMgmt.Enabled = true;
-        tabRecipeSettings.Enabled = true;
-        tabCtrlOnDisp.Enabled = true;
-        tabExposure.Enabled = true;
-        tabCheckerCalib.Enabled = true;
-        tabFeature.Enabled = true;
-        tabSNTP.Enabled = true;
-        tabFTP.Enabled = true;
-        tabHeResults.Enabled = true;
+        //tabSysSetup.Enabled = true;
+        //tabRecipeMgmt.Enabled = true;
+        //tabRecipeSettings.Enabled = true;
+        //tabCtrlOnDisp.Enabled = true;
+        //tabExposure.Enabled = true;
+        //tabCheckerCalib.Enabled = true;
+        //tabFeature.Enabled = true;
+        //tabSNTP.Enabled = true;
+        //tabFTP.Enabled = true;
+        //tabHeResults.Enabled = true;
       }
       else
       {
-        tabSysSetup.Enabled = false;
-        tabRecipeMgmt.Enabled = false;
-        tabRecipeSettings.Enabled = false;
-        tabCtrlOnDisp.Enabled = false;
-        tabExposure.Enabled = false;
-        tabCheckerCalib.Enabled = false;
-        tabFeature.Enabled = false;
-        tabSNTP.Enabled = false;
-        tabFTP.Enabled = false;
-        tabHeResults.Enabled = false;
+        //tabSysSetup.Enabled = false;
+        //tabRecipeMgmt.Enabled = false;
+        //tabRecipeSettings.Enabled = false;
+        //tabCtrlOnDisp.Enabled = false;
+        //tabExposure.Enabled = false;
+        //tabCheckerCalib.Enabled = false;
+        //tabFeature.Enabled = false;
+        //tabSNTP.Enabled = false;
+        //tabFTP.Enabled = false;
+        //tabHeResults.Enabled = false;
         return;
       }
 
@@ -275,8 +275,8 @@ namespace SampleApplication
       if (mCurrentSystem != null)
       {
         alignSystemDisplay.SetAlignSystem(mCurrentSystem);
-        alignSystemDisplay.BindRegionAcceptChanges(btn_Accept, "Enabled", "Click");
-        alignSystemDisplay.BindRegionCancelChanges(btn_Cancel, "Enabled", "Click");
+     //   alignSystemDisplay.BindRegionAcceptChanges(btn_Accept, "Enabled", "Click");
+      //  alignSystemDisplay.BindRegionCancelChanges(btn_Cancel, "Enabled", "Click");
       }
 
       mCamera1 = mCurrentSystem.Cameras[0];
@@ -301,18 +301,18 @@ namespace SampleApplication
       btn_PatternOrigin.Visible = sysSetting.UseMoveableOrigin;
 
       // Update Recipe Tab
-      updateCurretRecipeInfo();
-      updateRecipeList();
+      //updateCurretRecipeInfo();
+      //updateRecipeList();
 
-      // Update Other Tabs
-      // Update of Ctrl on Disp tab for Cam1 is not required. alignSystemDisplay keeps settings.
-      updateSystemSettingsTab();
-      updateExposureTab();
-      updateCheckerTab(1);
-      updateFeatureTab(1,1);     // (need to be after recipe setting) Here, show feature setting for CamID=1, Feature ID = 1
+      //// Update Other Tabs
+      //// Update of Ctrl on Disp tab for Cam1 is not required. alignSystemDisplay keeps settings.
+      //updateSystemSettingsTab();
+      //updateExposureTab();
+      //updateCheckerTab(1);
+      //updateFeatureTab(1,1);     // (need to be after recipe setting) Here, show feature setting for CamID=1, Feature ID = 1
 
-      updateSNTPSettingTab();
-      updateFTPSettingTab();
+      //updateSNTPSettingTab();
+      //updateFTPSettingTab();
 
     }
 

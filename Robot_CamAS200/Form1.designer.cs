@@ -37,6 +37,8 @@
             this.btnDisConnectDisplay = new System.Windows.Forms.Button();
             this.btnConnectDisplay = new System.Windows.Forms.Button();
             this.lvCam = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -199,6 +201,8 @@
             this.btnOnOffTool = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lvLogRobot = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -232,7 +236,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1443, 862);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1843, 862);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -248,7 +252,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(717, 858);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(917, 858);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // alignSystemDisplay
@@ -257,7 +261,7 @@
             this.alignSystemDisplay.Location = new System.Drawing.Point(4, 4);
             this.alignSystemDisplay.Margin = new System.Windows.Forms.Padding(4);
             this.alignSystemDisplay.Name = "alignSystemDisplay";
-            this.alignSystemDisplay.Size = new System.Drawing.Size(709, 635);
+            this.alignSystemDisplay.Size = new System.Drawing.Size(909, 635);
             this.alignSystemDisplay.TabIndex = 1;
             this.alignSystemDisplay.ToolBarLiveVideoEnabled = true;
             this.alignSystemDisplay.ToolBarLoadImageEnabled = true;
@@ -276,7 +280,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(713, 211);
+            this.groupBox2.Size = new System.Drawing.Size(913, 211);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LogCam";
@@ -305,14 +309,25 @@
             // 
             // lvCam
             // 
+            this.lvCam.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
             this.lvCam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvCam.HideSelection = false;
             this.lvCam.Location = new System.Drawing.Point(2, 15);
             this.lvCam.Margin = new System.Windows.Forms.Padding(2);
             this.lvCam.Name = "lvCam";
-            this.lvCam.Size = new System.Drawing.Size(709, 194);
+            this.lvCam.Size = new System.Drawing.Size(909, 194);
             this.lvCam.TabIndex = 0;
             this.lvCam.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Width = 115;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Width = 1200;
             // 
             // tableLayoutPanel3
             // 
@@ -321,13 +336,13 @@
             this.tableLayoutPanel3.Controls.Add(this.tabControl1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(723, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(923, 2);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(718, 858);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(918, 858);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tabControl1
@@ -338,7 +353,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(712, 637);
+            this.tabControl1.Size = new System.Drawing.Size(912, 637);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -387,7 +402,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(704, 611);
+            this.tabPage1.Size = new System.Drawing.Size(904, 611);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Calib HE";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -402,6 +417,7 @@
             this.btnRobotConnect.TabIndex = 72;
             this.btnRobotConnect.Text = "Connect";
             this.btnRobotConnect.UseVisualStyleBackColor = false;
+            this.btnRobotConnect.Click += new System.EventHandler(this.btnRobotConnect_Click);
             // 
             // btnConnectCamera
             // 
@@ -414,6 +430,7 @@
             this.btnConnectCamera.TabIndex = 71;
             this.btnConnectCamera.Text = "Connect";
             this.btnConnectCamera.UseVisualStyleBackColor = false;
+            this.btnConnectCamera.Click += new System.EventHandler(this.btnConnectCamera_Click);
             // 
             // btnAutoCalib
             // 
@@ -426,6 +443,7 @@
             this.btnAutoCalib.TabIndex = 70;
             this.btnAutoCalib.Text = "Auto Calib";
             this.btnAutoCalib.UseVisualStyleBackColor = false;
+            this.btnAutoCalib.Click += new System.EventHandler(this.btnAutoCalib_Click);
             // 
             // btnGetCurPos
             // 
@@ -437,6 +455,7 @@
             this.btnGetCurPos.TabIndex = 69;
             this.btnGetCurPos.Text = "Get CurPos";
             this.btnGetCurPos.UseVisualStyleBackColor = false;
+            this.btnGetCurPos.Click += new System.EventHandler(this.btnGetCurPos_Click);
             // 
             // lbStatusRobot
             // 
@@ -476,6 +495,7 @@
             this.btnClearData.TabIndex = 65;
             this.btnClearData.Text = "Clear Data";
             this.btnClearData.UseVisualStyleBackColor = false;
+            this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // label19
             // 
@@ -518,6 +538,7 @@
             this.btnHE.TabIndex = 53;
             this.btnHE.Text = "Hand-Eye";
             this.btnHE.UseVisualStyleBackColor = false;
+            this.btnHE.Click += new System.EventHandler(this.btnHE_Click);
             // 
             // btnSend
             // 
@@ -529,6 +550,7 @@
             this.btnSend.TabIndex = 52;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label12
             // 
@@ -810,7 +832,7 @@
             this.tabTrainRobot.Location = new System.Drawing.Point(4, 22);
             this.tabTrainRobot.Name = "tabTrainRobot";
             this.tabTrainRobot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTrainRobot.Size = new System.Drawing.Size(704, 611);
+            this.tabTrainRobot.Size = new System.Drawing.Size(904, 611);
             this.tabTrainRobot.TabIndex = 1;
             this.tabTrainRobot.Text = "Train Robot";
             this.tabTrainRobot.UseVisualStyleBackColor = true;
@@ -824,6 +846,7 @@
             this.btnGetPosFromPendant.TabIndex = 30;
             this.btnGetPosFromPendant.Text = "Get Pos From Pendant";
             this.btnGetPosFromPendant.UseVisualStyleBackColor = false;
+            this.btnGetPosFromPendant.Click += new System.EventHandler(this.btnGetPosFromPendant_Click);
             // 
             // panel5
             // 
@@ -873,6 +896,7 @@
             this.btnSavePos.TabIndex = 18;
             this.btnSavePos.Text = "GetPos to ";
             this.btnSavePos.UseVisualStyleBackColor = true;
+            this.btnSavePos.Click += new System.EventHandler(this.btnSavePos_Click);
             // 
             // cbFeature
             // 
@@ -905,6 +929,7 @@
             this.btnTrainPickPlace.TabIndex = 12;
             this.btnTrainPickPlace.Text = "Train Pick/Place Point";
             this.btnTrainPickPlace.UseVisualStyleBackColor = true;
+            this.btnTrainPickPlace.Click += new System.EventHandler(this.btnTrainPickPlace_Click);
             // 
             // btnTrainVisionPoint
             // 
@@ -914,6 +939,7 @@
             this.btnTrainVisionPoint.TabIndex = 12;
             this.btnTrainVisionPoint.Text = "Train Vision Point";
             this.btnTrainVisionPoint.UseVisualStyleBackColor = true;
+            this.btnTrainVisionPoint.Click += new System.EventHandler(this.btnTrainVisionPoint_Click);
             // 
             // btnGetCurPos2
             // 
@@ -923,6 +949,7 @@
             this.btnGetCurPos2.TabIndex = 4;
             this.btnGetCurPos2.Text = "Get CurPos";
             this.btnGetCurPos2.UseVisualStyleBackColor = true;
+            this.btnGetCurPos2.Click += new System.EventHandler(this.btnGetCurPos2_Click);
             // 
             // panel4
             // 
@@ -955,6 +982,7 @@
             this.btnMoveRobot.TabIndex = 5;
             this.btnMoveRobot.Text = "Move";
             this.btnMoveRobot.UseVisualStyleBackColor = false;
+            this.btnMoveRobot.Click += new System.EventHandler(this.btnMoveRobot_Click);
             // 
             // label28
             // 
@@ -1854,6 +1882,7 @@
             this.btnReleaseTool.TabIndex = 29;
             this.btnReleaseTool.Text = "Release";
             this.btnReleaseTool.UseVisualStyleBackColor = false;
+            this.btnReleaseTool.Click += new System.EventHandler(this.btnReleaseTool_Click);
             // 
             // label14
             // 
@@ -1873,6 +1902,7 @@
             this.btnCleanDataRobot.TabIndex = 27;
             this.btnCleanDataRobot.Text = "Clear";
             this.btnCleanDataRobot.UseVisualStyleBackColor = false;
+            this.btnCleanDataRobot.Click += new System.EventHandler(this.btnCleanDataRobot_Click);
             // 
             // txtReceiveDataRobot
             // 
@@ -1892,6 +1922,7 @@
             this.btnSendRobot.TabIndex = 25;
             this.btnSendRobot.Text = "Send";
             this.btnSendRobot.UseVisualStyleBackColor = true;
+            this.btnSendRobot.Click += new System.EventHandler(this.btnSendRobot_Click);
             // 
             // txtSendRobot
             // 
@@ -1917,6 +1948,7 @@
             this.btnTestRobot.TabIndex = 21;
             this.btnTestRobot.Text = "Test ";
             this.btnTestRobot.UseVisualStyleBackColor = true;
+            this.btnTestRobot.Click += new System.EventHandler(this.btnTestRobot_Click);
             // 
             // btnOnOffTool
             // 
@@ -1927,6 +1959,7 @@
             this.btnOnOffTool.TabIndex = 16;
             this.btnOnOffTool.Text = "Tool On";
             this.btnOnOffTool.UseVisualStyleBackColor = false;
+            this.btnOnOffTool.Click += new System.EventHandler(this.btnOnOffTool_Click);
             // 
             // groupBox1
             // 
@@ -1937,27 +1970,43 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(714, 211);
+            this.groupBox1.Size = new System.Drawing.Size(914, 211);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LogRobot";
             // 
             // lvLogRobot
             // 
+            this.lvLogRobot.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvLogRobot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
             this.lvLogRobot.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvLogRobot.HideSelection = false;
+            this.lvLogRobot.HoverSelection = true;
             this.lvLogRobot.Location = new System.Drawing.Point(2, 15);
             this.lvLogRobot.Margin = new System.Windows.Forms.Padding(2);
             this.lvLogRobot.Name = "lvLogRobot";
-            this.lvLogRobot.Size = new System.Drawing.Size(710, 194);
-            this.lvLogRobot.TabIndex = 0;
+            this.lvLogRobot.Size = new System.Drawing.Size(910, 194);
+            this.lvLogRobot.TabIndex = 2;
             this.lvLogRobot.UseCompatibleStateImageBehavior = false;
+            this.lvLogRobot.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "TimeStamp";
+            this.columnHeader1.Width = 243;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Info";
+            this.columnHeader2.Width = 1200;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 862);
+            this.ClientSize = new System.Drawing.Size(1843, 862);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
@@ -2152,11 +2201,15 @@
         private System.Windows.Forms.Button btnTestRobot;
         private System.Windows.Forms.Button btnOnOffTool;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView lvLogRobot;
+        public System.Windows.Forms.ListView lvLogRobot;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView lvCam;
+        public System.Windows.Forms.ListView lvCam;
         private System.Windows.Forms.Button btnDisConnectDisplay;
         private System.Windows.Forms.Button btnConnectDisplay;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 

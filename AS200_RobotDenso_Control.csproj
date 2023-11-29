@@ -68,6 +68,7 @@
     <Compile Include="MainForm.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyLib.cs" />
     <Compile Include="Robot_CamAS200\AutoCalib.cs">
       <SubType>Form</SubType>
     </Compile>
