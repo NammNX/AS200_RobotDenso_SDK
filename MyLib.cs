@@ -16,83 +16,21 @@ namespace AS200_RobotDenso_Control
     }
     public static class MyLib
     {
-        public static Form1 form1 = null;
-
-        public static String GetTimestamp(DateTime value)
+        // public static Form1 form1 = null;
+        public static Form1 myForm = new Form1();
+        public static void AddLog(string logMessage, ListView listview)
         {
-            return value.ToString("HH:mm:ss:ffff");
-
-        }
-        //public static void ShowLogListview(ListView listview, string message)
-        //{
-        //    if (listview.InvokeRequired)
-        //    {
-        //        listview.BeginInvoke(new Action(() =>
-        //        {
-        //            if (listview.Items.Count >= 1000)
-        //            {
-        //                listview.Items.Clear();
-        //            }
-
-        //            listview.Items.Insert(0,
-        //                new ListViewItem(new string[] { MyLib.GetTimestamp(DateTime.Now), $"{message}" }));
-        //        }));
-        //    }
-        //    else
-        //    {
-        //        if (listview.Items.Count >= 1000)
-        //        {
-        //            listview.Items.Clear();
-        //        }
-
-        //        listview.Items.Insert(0,
-        //                new ListViewItem(new string[] { MyLib.GetTimestamp(DateTime.Now), $"{message}" }));
-        //    }
-        //}
-        public static void ShowLogListview(ListView listView, string message)
-        {
-            if (listView.InvokeRequired)
+            if (listview.InvokeRequired)
             {
-                listView.BeginInvoke(new Action(() =>
-                {
-                    UpdateListView(listView, message);
-                }));
+                listview.Invoke(new Action(() => AddLog(logMessage, listview)));
             }
             else
             {
-                UpdateListView(listView, message);
+                ListViewItem item = new ListViewItem(DateTime.Now.ToString("HH:mm:ss"));
+                item.SubItems.Add(logMessage);
+                listview.Items.Add(item);
             }
         }
 
-        private static void UpdateListView(ListView listView, string message)
-        {
-            if (listView.Items.Count >= 1000)
-            {
-                listView.Items.Clear();
-            }
-
-            ListViewItem logItem = new ListViewItem(new string[] { MyLib.GetTimestamp(DateTime.Now), message });
-            listView.Items.Insert(0, logItem);
-        }
-
-        public static void AddLogAuto(string message, eDevice index = eDevice.Robot)
-        {
-            
-            //if (!MyParam.autoForm.IsHandleCreated) return;
-            switch (index)
-            {
-                case eDevice.Robot:
-                    ShowLogListview(form1.lvLogRobot, message);
-                    break;
-
-                case eDevice.Cam:
-                    ShowLogListview(form1.lvCam, message);
-                    break;
-                default:
-                    break;
-            }
-
-
-        }
     }
 }

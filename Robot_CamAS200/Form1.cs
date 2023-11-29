@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AS200_RobotDenso_Control;
 
 
 
@@ -17,6 +18,7 @@ namespace WindowsFormsApp4
 {
     public partial class Form1 : Form
     {
+        
         private CameraController cameraController;
         private RobotController robotController;
         public string x { get; set; }
@@ -30,13 +32,14 @@ namespace WindowsFormsApp4
 
         public Form1()
         {
+           
             InitializeComponent();
             RegisterJointButton();
             RegisterSaveButton();
             RegisterXYZButton();
+
+
            
-            
-            
             this.FormClosing += Form1_FormClosing;
             cameraController = new CameraController();
             cameraController.TextReceivedData = txtReceivedData;
@@ -59,7 +62,19 @@ namespace WindowsFormsApp4
         #region Connect Cam & Robot
         private bool IsConnectCam = false;
         private bool IsConnectRobot = false;
-        
+        //private void AddLog(string logMessage, ListView listview)
+        //{
+        //    if (listview.InvokeRequired)
+        //    {
+        //        listview.Invoke(new Action(() => AddLog(logMessage, listview)));
+        //    }
+        //    else
+        //    {
+        //        ListViewItem item = new ListViewItem(DateTime.Now.ToString("HH:mm:ss"));
+        //        item.SubItems.Add(logMessage);
+        //        listview.Items.Add(item);
+        //    }
+        //}
         private void btnConnectCamera_Click(object sender, EventArgs e)
         {
             if (!IsConnectCam)
@@ -69,6 +84,7 @@ namespace WindowsFormsApp4
                 cameraController.ConnectCamera(ipAddress, port);
                 if (cameraController.IsConnected)
                 {
+                    MyLib.AddLog("Cam Connected",lvLogRobot);
                     btnConnectCamera.Text = "Disconnect";
                     btnConnectCamera.BackColor = Color.Red;
                     IsConnectCam = true;
@@ -96,6 +112,7 @@ namespace WindowsFormsApp4
                 robotController.ConnectRobot(ipAddress, port);
                 if (robotController.IsConnected)
                 {
+                    MyLib.AddLog(" Robot Connected ",lvLogRobot);
                     btnRobotConnect.Text = "Disconnect";
                     btnRobotConnect.BackColor = Color.Red;
                     IsConnectRobot = true;

@@ -283,7 +283,7 @@
             this.groupBox2.Size = new System.Drawing.Size(913, 211);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "LogCam";
+            this.groupBox2.Text = "Log AS200";
             // 
             // btnDisConnectDisplay
             // 
@@ -760,7 +760,7 @@
             this.txtRobotIP.Name = "txtRobotIP";
             this.txtRobotIP.Size = new System.Drawing.Size(138, 20);
             this.txtRobotIP.TabIndex = 29;
-            this.txtRobotIP.Text = "192.168.1.30";
+            this.txtRobotIP.Text = "192.168.100.145";
             // 
             // label17
             // 
@@ -1973,7 +1973,7 @@
             this.groupBox1.Size = new System.Drawing.Size(914, 211);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "LogRobot";
+            this.groupBox1.Text = "Log";
             // 
             // lvLogRobot
             // 
@@ -1995,7 +1995,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "TimeStamp";
-            this.columnHeader1.Width = 243;
+            this.columnHeader1.Width = 185;
             // 
             // columnHeader2
             // 

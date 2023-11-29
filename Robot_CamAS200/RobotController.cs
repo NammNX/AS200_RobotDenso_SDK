@@ -41,7 +41,7 @@ namespace WindowsFormsApp4
                 {
                     robotClient = new TcpClient();
                     robotClient.Connect(ipAddress, port);
-                    MyLib.AddLogAuto("Connect Robot");
+                    
                 }
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace WindowsFormsApp4
                 {
                     TextReceivedData.AppendText(">>>> Robot: " + commandSendRobot + Environment.NewLine);
                 }));
-                MyLib.AddLogAuto(">>>> Robot: " + commandSendRobot + Environment.NewLine, eDevice.Robot);
+               
                 await robotClient.GetStream().WriteAsync(dataRobot, 0, dataRobot.Length);
             }
             catch (Exception ex)
