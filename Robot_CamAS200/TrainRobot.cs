@@ -28,7 +28,7 @@ namespace WindowsFormsApp4
 
             var command = $"TT,{Feature},{x},{y},{z},{rz},{ry},{rx}";
 
-            await cameraController.SendCommand(command);
+            cameraController.SendData(command);
             
            
         }
@@ -44,12 +44,12 @@ namespace WindowsFormsApp4
             string Feature = cbFeature.Text;
 
             var command = $"TTR,{Feature},{x},{y},{z},{rz},{ry},{rx}";
-            await cameraController.SendCommand(command);
+            cameraController.SendData(command);
         }
 
         private async void btnTrainVisionPoint_Click(object sender, EventArgs e)
         {
-            if (!cameraController.IsConnected)
+            if (!cameraController.IsConnected())
             {
                 MessageBox.Show("Camera not connected");
                 return;
@@ -61,7 +61,7 @@ namespace WindowsFormsApp4
             }
             btnTrainVisionPoint.Enabled = false;
             await TrainVisionPoint();
-            var DataReceive = await cameraController.ReceiveData();
+            var DataReceive = cameraController.GetData();
             if (DataReceive.Contains("TT,1"))
             {
                 MessageBox.Show("Train Success", "Thông báo", MessageBoxButtons.OK);
@@ -77,7 +77,7 @@ namespace WindowsFormsApp4
         private async void btnTrainPickPlace_Click(object sender, EventArgs e)
         {
 
-            if (!cameraController.IsConnected)
+            if (!cameraController.IsConnected())
             {
                 MessageBox.Show("Camera not connected");
                 return;
@@ -93,7 +93,7 @@ namespace WindowsFormsApp4
             await TrainRobotPickPlace();
 
             
-            var DataReceive = await cameraController.ReceiveData();
+            var DataReceive = cameraController.GetData();
             if (DataReceive.Contains("TTR,1"))
             {
                 MessageBox.Show("Train Success", "Thông báo", MessageBoxButtons.OK);
@@ -167,7 +167,7 @@ namespace WindowsFormsApp4
 
         private async void btnTestRobot_Click(object sender, EventArgs e)
         {
-            if (!cameraController.IsConnected)
+            if (!cameraController.IsConnected())
             {
                 MessageBox.Show("Camera not connected");
                 return;
@@ -184,8 +184,8 @@ namespace WindowsFormsApp4
             //}    
             var feature = cbFeature.Text;
             var command = $"XT,{feature},1,{x},{y},{z},{rz},{ry},{rx}";
-            await cameraController.SendCommand(command);
-            var Camrespon = await cameraController.ReceiveData();
+            cameraController.SendData(command);
+            var Camrespon = cameraController.GetData();
            
             if (!Camrespon.Contains("XT,1"))
             {

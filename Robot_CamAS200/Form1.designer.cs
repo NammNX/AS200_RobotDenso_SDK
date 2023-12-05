@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.alignSystemDisplay = new Cognex.AlignmentSDK.Controls.AlignSystemDisplay();
@@ -39,6 +38,8 @@
             this.lvCam = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripLogAs200 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.clearLogAs200 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -200,12 +201,15 @@
             this.btnTestRobot = new System.Windows.Forms.Button();
             this.btnOnOffTool = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvLogRobot = new System.Windows.Forms.ListView();
+            this.lvLog = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.clearLog = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.contextMenuStripLogAs200.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -216,12 +220,8 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // tableLayoutPanel1
             // 
@@ -312,6 +312,7 @@
             this.lvCam.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4});
+            this.lvCam.ContextMenuStrip = this.contextMenuStripLogAs200;
             this.lvCam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvCam.HideSelection = false;
             this.lvCam.Location = new System.Drawing.Point(2, 15);
@@ -320,14 +321,32 @@
             this.lvCam.Size = new System.Drawing.Size(909, 194);
             this.lvCam.TabIndex = 0;
             this.lvCam.UseCompatibleStateImageBehavior = false;
+            this.lvCam.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Width = 115;
+            this.columnHeader3.Text = "TimeStamp";
+            this.columnHeader3.Width = 150;
             // 
             // columnHeader4
             // 
+            this.columnHeader4.Text = "Info";
             this.columnHeader4.Width = 1200;
+            // 
+            // contextMenuStripLogAs200
+            // 
+            this.contextMenuStripLogAs200.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearLogAs200});
+            this.contextMenuStripLogAs200.Name = "contextMenuStripLogAs200";
+            this.contextMenuStripLogAs200.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.contextMenuStripLogAs200.Size = new System.Drawing.Size(125, 26);
+            // 
+            // clearLogAs200
+            // 
+            this.clearLogAs200.Name = "clearLogAs200";
+            this.clearLogAs200.Size = new System.Drawing.Size(124, 22);
+            this.clearLogAs200.Text = "Clear Log";
+            this.clearLogAs200.Click += new System.EventHandler(this.clearLogAs200_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -780,7 +799,7 @@
             this.txtCamIp.Name = "txtCamIp";
             this.txtCamIp.Size = new System.Drawing.Size(138, 20);
             this.txtCamIp.TabIndex = 28;
-            this.txtCamIp.Text = "192.168.1.10";
+            this.txtCamIp.Text = "192.168.0.101";
             // 
             // label13
             // 
@@ -1964,7 +1983,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.groupBox1.Controls.Add(this.lvLogRobot);
+            this.groupBox1.Controls.Add(this.lvLog);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(2, 645);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -1975,22 +1994,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log";
             // 
-            // lvLogRobot
+            // lvLog
             // 
-            this.lvLogRobot.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.lvLogRobot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvLog.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvLog.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.lvLogRobot.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvLogRobot.HideSelection = false;
-            this.lvLogRobot.HoverSelection = true;
-            this.lvLogRobot.Location = new System.Drawing.Point(2, 15);
-            this.lvLogRobot.Margin = new System.Windows.Forms.Padding(2);
-            this.lvLogRobot.Name = "lvLogRobot";
-            this.lvLogRobot.Size = new System.Drawing.Size(910, 194);
-            this.lvLogRobot.TabIndex = 2;
-            this.lvLogRobot.UseCompatibleStateImageBehavior = false;
-            this.lvLogRobot.View = System.Windows.Forms.View.Details;
+            this.lvLog.ContextMenuStrip = this.contextMenuStrip2;
+            this.lvLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvLog.HideSelection = false;
+            this.lvLog.HoverSelection = true;
+            this.lvLog.Location = new System.Drawing.Point(2, 15);
+            this.lvLog.Margin = new System.Windows.Forms.Padding(2);
+            this.lvLog.Name = "lvLog";
+            this.lvLog.Size = new System.Drawing.Size(910, 194);
+            this.lvLog.TabIndex = 2;
+            this.lvLog.UseCompatibleStateImageBehavior = false;
+            this.lvLog.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -2001,6 +2021,20 @@
             // 
             this.columnHeader2.Text = "Info";
             this.columnHeader2.Width = 1200;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearLog});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(125, 26);
+            // 
+            // clearLog
+            // 
+            this.clearLog.Name = "clearLog";
+            this.clearLog.Size = new System.Drawing.Size(124, 22);
+            this.clearLog.Text = "Clear Log";
+            this.clearLog.Click += new System.EventHandler(this.clearLog_Click);
             // 
             // Form1
             // 
@@ -2014,6 +2048,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.contextMenuStripLogAs200.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -2031,12 +2066,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Cognex.AlignmentSDK.Controls.AlignSystemDisplay alignSystemDisplay;
@@ -2076,11 +2111,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCommand;
-        private System.Windows.Forms.TextBox txtRobotPort;
-        private System.Windows.Forms.TextBox txtCamPort;
-        private System.Windows.Forms.TextBox txtRobotIP;
+        public System.Windows.Forms.TextBox txtRobotPort;
+        public System.Windows.Forms.TextBox txtCamPort;
+        public System.Windows.Forms.TextBox txtRobotIP;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtCamIp;
+        public System.Windows.Forms.TextBox txtCamIp;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -2201,7 +2236,7 @@
         private System.Windows.Forms.Button btnTestRobot;
         private System.Windows.Forms.Button btnOnOffTool;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.ListView lvLogRobot;
+        public System.Windows.Forms.ListView lvLog;
         private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.ListView lvCam;
         private System.Windows.Forms.Button btnDisConnectDisplay;
@@ -2210,6 +2245,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripLogAs200;
+        private System.Windows.Forms.ToolStripMenuItem clearLogAs200;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem clearLog;
     }
 }
 

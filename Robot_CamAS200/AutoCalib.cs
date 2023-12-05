@@ -15,8 +15,9 @@ namespace WindowsFormsApp4
         {
             var commandHandEyeBegin = $"ACB,1,1,{x},{y},{z},{rz},{ry},{rx}"; //  Start HE
             await robotController.SendCommand("HE"); // gửi chữ HE để robot nhảy vào phần HE trên WC3
-            await cameraController.SendCommand(commandHandEyeBegin);
-            var receivedDataCam = await cameraController.ReceiveData();
+            cameraController.SendData(commandHandEyeBegin);
+            var receivedDataCam = cameraController.GetData();
+
 
             if (!receivedDataCam.Contains("ACB,2"))
             {
@@ -38,8 +39,8 @@ namespace WindowsFormsApp4
             while (!shouldExit)
             {
                 var commandHandEyeStep = "AC,1,1," + nextPosForCam;
-                await cameraController.SendCommand(commandHandEyeStep);
-                var camResponse = await cameraController.ReceiveData();
+                cameraController.SendData(commandHandEyeStep);
+                var camResponse = cameraController.GetData();
                 if (camResponse.Contains("AC,1"))
                 {
                     btnAutoCalib.Enabled = true;
@@ -69,7 +70,7 @@ namespace WindowsFormsApp4
         
         private async void btnAutoCalib_Click(object sender, EventArgs e)
         {
-            if (!cameraController.IsConnected || !robotController.IsConnected)
+            if (!cameraController.IsConnected() || !robotController.IsConnected)
             {
                 MessageBox.Show("Not Connected Cam/Robot");
                 return;

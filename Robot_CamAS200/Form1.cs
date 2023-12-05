@@ -16,6 +16,7 @@ using AS200_RobotDenso_Control;
 //nxn
 namespace WindowsFormsApp4
 {
+    
     public partial class Form1 : Form
     {
         
@@ -28,8 +29,24 @@ namespace WindowsFormsApp4
         public string ry { get; set; }
         public string rz { get; set; }
         public string fig { get; set; }
-        
 
+        private static Form1 _instance;
+        private static readonly object _lock = new object();
+        public static Form1 GetInstance()
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+
+                    if (_instance == null)
+                    {
+                        _instance = new Form1();
+                    }
+                }
+            }
+            return _instance;
+        }
         public Form1()
         {
            
@@ -38,12 +55,10 @@ namespace WindowsFormsApp4
             RegisterSaveButton();
             RegisterXYZButton();
 
-
-           
             this.FormClosing += Form1_FormClosing;
-            cameraController = new CameraController();
-            cameraController.TextReceivedData = txtReceivedData;
-            cameraController.TextReceivedData = txtReceiveDataRobot;
+            cameraController = CameraController.GetInstance();
+           // cameraController.TextReceivedData = txtReceivedData;
+          //  cameraController.TextReceivedData = txtReceiveDataRobot;
             robotController = new RobotController();
             robotController.TextReceivedData = txtReceivedData;
             robotController.TextReceivedData = txtReceiveDataRobot;
@@ -54,37 +69,25 @@ namespace WindowsFormsApp4
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!cameraController.IsConnected && !robotController.IsConnected) { return; }
-            robotController.DisConnectRobot();
-            cameraController.DisconnectCamera();
+            //if (!cameraController.IsConnected && !robotController.IsConnected) { return; }
+            //robotController.DisConnectRobot();
+            //cameraController.DisconnectCamera();
             //SaveStateToFile();
         }
         #region Connect Cam & Robot
-        private bool IsConnectCam = false;
-        private bool IsConnectRobot = false;
-        //private void AddLog(string logMessage, ListView listview)
-        //{
-        //    if (listview.InvokeRequired)
-        //    {
-        //        listview.Invoke(new Action(() => AddLog(logMessage, listview)));
-        //    }
-        //    else
-        //    {
-        //        ListViewItem item = new ListViewItem(DateTime.Now.ToString("HH:mm:ss"));
-        //        item.SubItems.Add(logMessage);
-        //        listview.Items.Add(item);
-        //    }
-        //}
+       private bool IsConnectCam = false;
+       private bool IsConnectRobot = false;
+        
         private void btnConnectCamera_Click(object sender, EventArgs e)
         {
             if (!IsConnectCam)
             {
-                var ipAddress = txtCamIp.Text;
-                var port = int.Parse(txtCamPort.Text);
-                cameraController.ConnectCamera(ipAddress, port);
-                if (cameraController.IsConnected)
+                //var ipAddress = txtCamIp.Text;
+                //var port = int.Parse(txtCamPort.Text);
+                cameraController.Connect();
+                if (cameraController.IsConnected())
                 {
-                    MyLib.AddLog("Cam Connected",lvLogRobot);
+                    MyLib.AddLogAuto("Cam Connected",eDevice.Robot);
                     btnConnectCamera.Text = "Disconnect";
                     btnConnectCamera.BackColor = Color.Red;
                     IsConnectCam = true;
@@ -96,13 +99,14 @@ namespace WindowsFormsApp4
             }
             else
             {
-                cameraController.DisconnectCamera();
+                cameraController.Disconnect();
                 IsConnectCam = false;
                 btnConnectCamera.Text = "Connect";
                 btnConnectCamera.BackColor = Color.Green;
             }
         }
 
+        string temp = "Robot Connected";
         private void btnRobotConnect_Click(object sender, EventArgs e)
         {
             if (!IsConnectRobot)
@@ -112,7 +116,7 @@ namespace WindowsFormsApp4
                 robotController.ConnectRobot(ipAddress, port);
                 if (robotController.IsConnected)
                 {
-                    MyLib.AddLog(" Robot Connected ",lvLogRobot);
+                    MyLib.AddLogAuto(temp, eDevice.Robot);
                     btnRobotConnect.Text = "Disconnect";
                     btnRobotConnect.BackColor = Color.Red;
                     IsConnectRobot = true;
@@ -137,8 +141,10 @@ namespace WindowsFormsApp4
         {
 
             var command = txtCommand.Text.Trim();
-            await cameraController.SendCommand(command);
-            await cameraController.ReceiveData();
+            
+            cameraController.SendData(command);
+            cameraController.GetData();
+            cameraController.ClearData();
 
         }
         private async void btnSendRobot_Click(object sender, EventArgs e)
@@ -155,6 +161,7 @@ namespace WindowsFormsApp4
             btnTrainPickPlace.Enabled = true;
             btnTrainVisionPoint.Enabled = true;
             shouldExit = true;
+            ShowLogAS200();
         }
 
         private void btnCleanDataRobot_Click(object sender, EventArgs e)
@@ -237,7 +244,15 @@ namespace WindowsFormsApp4
             return DataReiceved;
         }
 
-       
+        private void clearLogAs200_Click(object sender, EventArgs e)
+        {
+            lvCam.Items.Clear();
+        }
+
+        private void clearLog_Click(object sender, EventArgs e)
+        {
+            lvLog.Items.Clear();
+        }
     }
 
 }

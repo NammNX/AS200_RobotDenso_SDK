@@ -12,6 +12,7 @@ using Cognex.AlignmentSDK.Interfaces;
 using Cognex.AlignmentSDK.Enumerations;
 using Cognex.AlignmentSDK.Classes.Settings;
 using Cognex.AlignmentSDK.Exceptions;
+using AS200_RobotDenso_Control;
 
 namespace WindowsFormsApp4
 {
@@ -92,8 +93,27 @@ namespace WindowsFormsApp4
                 return;
             }
 
-         
-
         }
+        public void ShowLogAS200()
+        {
+            try
+            {
+                var counter = mCurrentSystem.GetLogCounter();
+                var log = mCurrentSystem.GetLog();
+
+                Trace.WriteLine("Log counter : " + counter);         // Displayed on Output window
+                foreach (var item in log)
+                {
+                    Trace.WriteLine(item);
+                    MyLib.AddLogAuto(item, eDevice.Cam);
+                }
+                mCurrentSystem.ResetLog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

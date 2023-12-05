@@ -9,8 +9,26 @@ namespace WindowsFormsApp4
 {
     public class RobotController
     {
-       
 
+
+        private static RobotController _instance;
+        private static readonly object _lock = new object();
+        public static RobotController GetInstance()
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new RobotController();
+                    }
+                }
+            }
+            return _instance;
+        }
+       
+       
         private TcpClient robotClient;
         public TextBox TextReceivedData { get; set; }
        
@@ -71,11 +89,8 @@ namespace WindowsFormsApp4
             {
                 var commandSendRobot = command + ",";
                 byte[] dataRobot = Encoding.ASCII.GetBytes(commandSendRobot);
-                TextReceivedData.Invoke((MethodInvoker)(() =>
-                {
-                    TextReceivedData.AppendText(">>>> Robot: " + commandSendRobot + Environment.NewLine);
-                }));
-               
+                TextReceivedData.AppendText(">>>> Robot: " + commandSendRobot + Environment.NewLine);   
+                MyLib.AddLogAuto(commandSendRobot, eDevice.Robot);
                 await robotClient.GetStream().WriteAsync(dataRobot, 0, dataRobot.Length);
             }
             catch (Exception ex)
@@ -104,7 +119,8 @@ namespace WindowsFormsApp4
                         {
                             TextReceivedData.AppendText("<<<< Robot: " + receivedDataRobot + Environment.NewLine);
                         }));
-                        
+                        MyLib.AddLogAuto(receivedDataRobot, eDevice.Robot);
+
                         return receivedDataRobot;
                     }
                 }

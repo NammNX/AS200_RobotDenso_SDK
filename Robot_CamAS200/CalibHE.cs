@@ -52,7 +52,7 @@ namespace WindowsFormsApp4
 
         private async void btnHE_Click(object sender, EventArgs e)
         {
-            if (!cameraController.IsConnected || !robotController.IsConnected)
+            if (!cameraController.IsConnected() || !robotController.IsConnected)
             {
                 MessageBox.Show("Kết nối đến camera và robot trước khi gửi lệnh!");
                 return;
@@ -106,8 +106,8 @@ namespace WindowsFormsApp4
 
             try
             {
-                await cameraController.SendCommand("HEB,1");
-                var receivedDataCamHEB = await cameraController.ReceiveData();
+                cameraController.SendData("HEB,1");
+                var receivedDataCamHEB = cameraController.GetData();
                 if (!receivedDataCamHEB.Contains("HEB,1"))
                 {
                     MessageBox.Show("Calib Fail");
@@ -122,8 +122,8 @@ namespace WindowsFormsApp4
 
                     if (receivedDataRobot.Contains("OK"))
                     {
-                        await cameraController.SendCommand(commandLinesCam[i]);
-                        string receivedDataCam = await cameraController.ReceiveData();
+                        cameraController.SendData(commandLinesCam[i]);
+                        string receivedDataCam = cameraController.GetData();
 
                         if (receivedDataCam.Contains("HE,1"))
                         {
@@ -137,8 +137,8 @@ namespace WindowsFormsApp4
                 }
 
 
-                await cameraController.SendCommand("HEE,1");
-                await cameraController.ReceiveData();
+                cameraController.SendData("HEE,1");
+                cameraController.GetData();
                 MessageBox.Show("HE finish");
                 btnHE.Enabled = true;
             }
